@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Roxy\\Documents\\AMDARIS\\dev1\\publicapp\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\Roxy\\Documents\\AMDARIS\\dev2\\publicapp\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Users\\Roxy\\Documents\\AMDARIS\\dev1\\publicapp\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectPath": "C:\\Users\\Roxy\\Documents\\AMDARIS\\dev2\\publicapp\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
       "packagesPath": "C:\\Users\\Roxy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Roxy\\Documents\\AMDARIS\\dev1\\publicapp\\ConsoleApp1\\ConsoleApp1\\obj\\",
+      "outputPath": "C:\\Users\\Roxy\\Documents\\AMDARIS\\dev2\\publicapp\\ConsoleApp1\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Roxy\\AppData\\Roaming\\NuGet\\NuGet.Config",
