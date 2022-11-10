@@ -1,0 +1,15 @@
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\bin\Debug\net6.0\GenericAssigment.exe
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\bin\Debug\net6.0\GenericAssigment.deps.json
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\bin\Debug\net6.0\GenericAssigment.runtimeconfig.json
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\bin\Debug\net6.0\GenericAssigment.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\bin\Debug\net6.0\GenericAssigment.pdb
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\obj\Debug\net6.0\GenericAssigment.csproj.AssemblyReference.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\obj\Debug\net6.0\GenericAssigment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\obj\Debug\net6.0\GenericAssigment.AssemblyInfoInputs.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\obj\Debug\net6.0\GenericAssigment.AssemblyInfo.cs
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\obj\Debug\net6.0\GenericAssigment.csproj.CoreCompileInputs.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\obj\Debug\net6.0\GenericAssigment.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\obj\Debug\net6.0\refint\GenericAssigment.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\obj\Debug\net6.0\GenericAssigment.pdb
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\obj\Debug\net6.0\GenericAssigment.genruntimeconfig.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\GenericAssigment\GenericAssigment\obj\Debug\net6.0\ref\GenericAssigment.dll
