@@ -29,6 +29,16 @@ namespace Linq
           
         }
 
+        public static DateTime DateSample() {
+            return DateTime.Now;
+        }
+
+        public static TimeSpan TimeSample(int hours, int minutes, int seconds)
+        {
+            return new TimeSpan(hours, minutes, seconds);
+
+        }
+
         public static void AddDetail(this Activity activity, DetailActivity detailActivity) 
         {
             activity.Details.Add(detailActivity);
