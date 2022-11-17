@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "87PXTOL4qix6Fse0pWbc5DsK0n2xm4v5FEojYldf8Sbwke7B5eXOoDlXkPVubK7brgWgLkTzRk/UPuMM/TuXGA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Roxy\\Documents\\AMDARIS\\dev1\\publicapp\\CleanStructure\\ConsolePresentation\\ConsolePresentation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Roxy\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
+    "C:\\Users\\Roxy\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\Roxy\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.0.0\\mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\Roxy\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\Roxy\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jx7Xj8yanqw8a8bxsAhIBcKi2rdnLUsv9havRolMI4U5bO9i/Yn572vbIC1ajJaFhAwu9ntF2DcIBFi6w/AC2w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Roxy\\Documents\\AMDARIS\\dev1\\publicapp\\CleanStructure\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Roxy\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
+    "C:\\Users\\Roxy\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
