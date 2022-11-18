@@ -1,0 +1,15 @@
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\bin\Debug\net6.0\SingletonSample.exe
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\bin\Debug\net6.0\SingletonSample.deps.json
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\bin\Debug\net6.0\SingletonSample.runtimeconfig.json
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\bin\Debug\net6.0\SingletonSample.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\bin\Debug\net6.0\SingletonSample.pdb
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\obj\Debug\net6.0\SingletonSample.csproj.AssemblyReference.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\obj\Debug\net6.0\SingletonSample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\obj\Debug\net6.0\SingletonSample.AssemblyInfoInputs.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\obj\Debug\net6.0\SingletonSample.AssemblyInfo.cs
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\obj\Debug\net6.0\SingletonSample.csproj.CoreCompileInputs.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\obj\Debug\net6.0\SingletonSample.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\obj\Debug\net6.0\refint\SingletonSample.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\obj\Debug\net6.0\SingletonSample.pdb
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\obj\Debug\net6.0\SingletonSample.genruntimeconfig.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CreationalPatterns\SingletonSample\obj\Debug\net6.0\ref\SingletonSample.dll
