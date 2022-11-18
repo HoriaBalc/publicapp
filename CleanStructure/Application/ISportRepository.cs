@@ -4,6 +4,6 @@ namespace Application;
 
 public interface ISportRepository
 {
-    Sport GetSport(Guid id);
+    Sport GetSport(string name);
     void CreateSport(Sport sport);
 }

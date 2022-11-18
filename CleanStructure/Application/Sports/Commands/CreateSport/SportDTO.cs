@@ -8,6 +8,6 @@ namespace Application.Sports.Commands.CreateSport
 {
     public class SportDTO
     {
-
+        public string Name { get; set; } = null!;
     }
 }

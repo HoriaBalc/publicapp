@@ -1,6 +1,7 @@
 ﻿namespace Domain;
 using System;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 public class User
 {
@@ -23,7 +24,7 @@ public class User
 
     public double Weight { get; set; }
 
-    public string Phone { get { return phone; } set { phone = RunApp.FormatPhoneNumber(value); } }
+    public string Phone { get { return phone; } set { phone = this.FormatPhoneNumber(value); } }
 
     public Role Role { get; set;}
     
@@ -70,6 +71,13 @@ public class User
     public User(string firstName, string lastName, string email, string password, DateTime date, double height, double weight, string phone, Role role):this(firstName, lastName, email, password,date, height, weight, role)
     {
         Phone = phone;
+    }
+    public string FormatPhoneNumber(string phone)
+    {
+        Regex regex = new Regex(@"[^\d]");
+        phone = regex.Replace(phone, "");
+        phone = Regex.Replace(phone, @"(\d{3})(\d{3})(\d{4})", "$1-$2-$3");
+        return phone;
     }
 
 }

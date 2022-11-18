@@ -30,7 +30,10 @@ namespace Domain
         public User User { get; set; }
         
         public List<DetailActivity> Details { get; private set; }
-
+        public Activity()
+        {
+            Id = Guid.NewGuid();
+        }
         public Activity(TimeSpan duration, DateTime startDate, decimal distance, Sport sport, User user)
         {
             Id = Guid.NewGuid();

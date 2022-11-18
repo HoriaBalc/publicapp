@@ -21,6 +21,11 @@ namespace Domain
         
         public double Calories { get; set; }
 
+        public DetailActivity()
+        {
+            Id = Guid.NewGuid();
+        }
+
         public DetailActivity(TimeSpan duration, decimal distance)
         {
             Id = Guid.NewGuid();

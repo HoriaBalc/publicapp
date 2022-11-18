@@ -11,12 +11,13 @@ namespace Infrastructure
     public class InMemorySportRepository : ISportRepository
     {
         private readonly List<Sport> _sports = new();
-        public Sport GetSport(Guid id) 
+        public Sport GetSport(string name) 
         {
             foreach(Sport sport in _sports){
-                return sport;
+                if(sport.Name.Equals(name))
+                    return sport;
             }
-            return null;
+            return new Sport(name);
         }
         public void CreateSport(Sport sport) 
         {

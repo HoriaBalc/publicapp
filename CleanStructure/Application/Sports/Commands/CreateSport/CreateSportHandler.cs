@@ -8,10 +8,16 @@ using System.Threading.Tasks;
 
 namespace Application.Sports.Commands.CreateSport
 {
-    public class CreateSportHandler : IRequestHandler<CreateSportMessage, Guid>
+    public class CreateSportHandler : IRequestHandler<CreateSportCommand, Guid>
     {
         private readonly ISportRepository _sportRepository;
-        public Task<Guid> Handle(CreateSportMessage message, CancellationToken cancellationToken)
+
+        public CreateSportHandler(ISportRepository sportRepository)
+        {
+            _sportRepository = sportRepository;
+        }
+
+        public Task<Guid> Handle(CreateSportCommand message, CancellationToken cancellationToken)
         {
             var sport = new Sport(message.Name);
             _sportRepository.CreateSport(sport);

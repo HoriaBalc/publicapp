@@ -6,6 +6,8 @@ using System.Reflection.PortableExecutable;
 using System.Security.Cryptography;
 using System.Text;
 using static System.Console;
+using static System.Net.WebRequestMethods;
+using File = System.IO.File;
 
 
 
@@ -70,11 +72,31 @@ using (Stream s = new FileStream(@"C:\Users\Roxy\Documents\AMDARIS\dev1\publicap
 
 }
 
-//read the data
-string sourceFile = @"C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\Streams\Streams\Encription.txt";
-string dataRead = File.ReadAllText(sourceFile);
-WriteLine(dataRead);
+//using (Stream output = new FileStream(@"C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\Streams\Streams\output.txt", FileMode.OpenOrCreate))
 
+//using (Stream s = new FileStream(@"C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\Streams\Streams\Encription.txt", FileMode.OpenOrCreate))
+//{
+//    using (var aes = Aes.Create())
+//    {
+//        aes.BlockSize = 128;
+//        aes.KeySize = 128;
+//        aes.Mode = CipherMode.CBC;
+//        aes.Padding = PaddingMode.Zeros;
+//        using (CryptoStream cryptStream = new CryptoStream(s, aes.CreateDecryptor(), CryptoStreamMode.Read))
+//        {
+//            //data.CopyTo(cryptStream);
+//                s.CopyTo(cryptStream);
+                
+//                //var result = Encoding.Unicode.GetString(output.ToArray()); ;
+//        }
+//    }
+
+//}
+
+//read the data
+//string sourceFile = @"C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\Streams\Streams\Encription.txt";
+//string dataRead = File.ReadAllText(sourceFile);
+//WriteLine(dataRead);
 
 
 
