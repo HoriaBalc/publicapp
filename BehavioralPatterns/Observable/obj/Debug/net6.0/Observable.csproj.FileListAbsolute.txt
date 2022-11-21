@@ -1,0 +1,15 @@
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\bin\Debug\net6.0\Observable.exe
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\bin\Debug\net6.0\Observable.deps.json
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\bin\Debug\net6.0\Observable.runtimeconfig.json
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\bin\Debug\net6.0\Observable.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\bin\Debug\net6.0\Observable.pdb
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\obj\Debug\net6.0\Observable.csproj.AssemblyReference.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\obj\Debug\net6.0\Observable.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\obj\Debug\net6.0\Observable.AssemblyInfoInputs.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\obj\Debug\net6.0\Observable.AssemblyInfo.cs
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\obj\Debug\net6.0\Observable.csproj.CoreCompileInputs.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\obj\Debug\net6.0\Observable.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\obj\Debug\net6.0\refint\Observable.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\obj\Debug\net6.0\Observable.pdb
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\obj\Debug\net6.0\Observable.genruntimeconfig.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Observable\obj\Debug\net6.0\ref\Observable.dll

@@ -1,0 +1,15 @@
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\bin\Debug\net6.0\Template.exe
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\bin\Debug\net6.0\Template.deps.json
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\bin\Debug\net6.0\Template.runtimeconfig.json
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\bin\Debug\net6.0\Template.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\bin\Debug\net6.0\Template.pdb
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\obj\Debug\net6.0\Template.csproj.AssemblyReference.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\obj\Debug\net6.0\Template.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\obj\Debug\net6.0\Template.AssemblyInfoInputs.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\obj\Debug\net6.0\Template.AssemblyInfo.cs
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\obj\Debug\net6.0\Template.csproj.CoreCompileInputs.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\obj\Debug\net6.0\Template.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\obj\Debug\net6.0\refint\Template.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\obj\Debug\net6.0\Template.pdb
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\obj\Debug\net6.0\Template.genruntimeconfig.cache
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\BehavioralPatterns\Template\obj\Debug\net6.0\ref\Template.dll
