@@ -19,9 +19,11 @@ namespace Infrastructure
             }
             return new Sport(name);
         }
-        public void CreateSport(Sport sport) 
+        public Guid CreateSport(string nameSport) 
         {
+            var sport = new Sport(nameSport);
             _sports.Add(sport);
+            return sport.Id;
         }
     }
 }

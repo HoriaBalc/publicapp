@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Sports.Commands.CreateSport
+namespace Application
 {
     public class CreateSportHandler : IRequestHandler<CreateSportCommand, Guid>
     {
@@ -19,9 +19,9 @@ namespace Application.Sports.Commands.CreateSport
 
         public Task<Guid> Handle(CreateSportCommand message, CancellationToken cancellationToken)
         {
-            var sport = new Sport(message.Name);
-            _sportRepository.CreateSport(sport);
-            return Task.FromResult(sport.Id);
+            //var sport = new Sport(message.Name);
+            var id=_sportRepository.CreateSport(message.Name);
+            return Task.FromResult(id);
 
         }
     }

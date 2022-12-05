@@ -13,7 +13,7 @@ namespace Domain
         public string Name { get; set; }
 
         public Sport(string name) {
-            Id = new Guid();
+            Id = Guid.NewGuid();
             Name = name;
         }
 
