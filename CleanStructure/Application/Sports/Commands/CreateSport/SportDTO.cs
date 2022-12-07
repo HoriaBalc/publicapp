@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,16 @@ namespace Application
 {
     public class SportDTO
     {
+        public SportDTO(string name)
+        {
+            Id = Guid.NewGuid();
+            Name = name;
+            Activities = new List<Activity>();
+        }
+        public Guid Id { get; set; }
+
         public string Name { get; set; } = null!;
+
+        public List<Activity> Activities { get; set; } = new();
     }
 }

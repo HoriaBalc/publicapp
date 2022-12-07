@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Domain;
 namespace Application
 {
-    public class CreateSportCommand : IRequest<Guid>
-    {
-        public string Name { get; set; } = null!;
+    public class CreateSportCommand : IRequest<string>
+    {        
+       public SportDTO dto  { get; set; }
         //public List<SportDTO> Sports { get; set; } = new();
     }
 }

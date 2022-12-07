@@ -28,7 +28,7 @@ public class User
 
     public Role Role { get; set;}
     
-    public ArrayList Activities { get; private set; }
+    public virtual List<Activity> Activities { get; private set; }
 
     public User()
     {
@@ -43,7 +43,7 @@ public class User
         Email = email;
         Password = password;
         Role = role;
-        Activities = new ArrayList();
+        Activities = new List<Activity>();
     }
     
     public User( string firstName, string lastName, string email, string password, string phone, Role role):this(firstName,lastName,email,password,role)

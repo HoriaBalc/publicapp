@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application
 {
-    public class CreateSportHandler : IRequestHandler<CreateSportCommand, Guid>
+    public class CreateSportHandler : IRequestHandler<CreateSportCommand, string>
     {
         private readonly ISportRepository _sportRepository;
 
@@ -17,11 +17,14 @@ namespace Application
             _sportRepository = sportRepository;
         }
 
-        public Task<Guid> Handle(CreateSportCommand message, CancellationToken cancellationToken)
+        public async Task<string> Handle(CreateSportCommand request, CancellationToken cancellationToken)
         {
-            //var sport = new Sport(message.Name);
-            var id=_sportRepository.CreateSport(message.Name);
-            return Task.FromResult(id);
+            
+            var sport = new Sport(request.dto.Name);
+            //var sportDto = new SportDTO(sport);
+            //var s = new Sport(request.Name);
+            var sp=await _sportRepository.CreateSport(sport);
+            return sp;
 
         }
     }

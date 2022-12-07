@@ -4,6 +4,9 @@ namespace Application;
 
 public interface ISportRepository
 {
-    Sport GetSport(string name);
-    Guid CreateSport(string nameSport);
+    Task<Sport> GetSport(string name);
+    Task<string> CreateSport(Sport sport);
+    Task<Sport> DeleteSport(Sport sport);
+    Task<Sport> UpdateSport(Sport sport);
+
 }

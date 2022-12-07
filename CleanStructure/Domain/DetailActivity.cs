@@ -13,7 +13,7 @@ namespace Domain
         
         public TimeSpan Duration { get; set; }
         
-        public decimal Distance { get; set; }
+        public double Distance { get; set; }
         
         public int ElevationGain { get; set; }
         
@@ -21,12 +21,15 @@ namespace Domain
         
         public double Calories { get; set; }
 
+        public Activity Activity { get; set; }
+
+
         public DetailActivity()
         {
             Id = Guid.NewGuid();
         }
 
-        public DetailActivity(TimeSpan duration, decimal distance)
+        public DetailActivity(TimeSpan duration, double distance)
         {
             Id = Guid.NewGuid();
             Duration = duration;
@@ -34,7 +37,16 @@ namespace Domain
             
         }
 
-        public DetailActivity(TimeSpan duration, decimal distance, int elevationGain, int elevationLoss, double calories)
+        public DetailActivity(TimeSpan duration, double distance, Activity activity)
+        {
+            Id = Guid.NewGuid();
+            Duration = duration;
+            Distance = distance;
+            Activity = activity;
+
+        }
+
+        public DetailActivity(TimeSpan duration, double distance, int elevationGain, int elevationLoss, double calories)
         {
             Id = Guid.NewGuid();
             Duration = duration;
