@@ -11,7 +11,7 @@ namespace Domain
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public virtual List<Activity> Activities { get; private set; }
+        public virtual List<Activity> Activities { get; set; }
 
         public Sport(string name) {
             Id = Guid.NewGuid();

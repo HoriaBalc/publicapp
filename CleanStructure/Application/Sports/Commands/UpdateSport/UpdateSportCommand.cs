@@ -10,6 +10,6 @@ namespace Application.Sports.Commands.UpdateSport
 {
     public class UpdateSportCommand : IRequest<Sport>
     {
-        public string Name { get; set; } = null!;
+        public SportDTO dto { get; set; }
     }
 }

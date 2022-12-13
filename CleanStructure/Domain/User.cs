@@ -28,7 +28,7 @@ public class User
 
     public Role Role { get; set;}
     
-    public virtual List<Activity> Activities { get; private set; }
+    public virtual List<Activity> Activities { get;  set; }
 
     public User()
     {

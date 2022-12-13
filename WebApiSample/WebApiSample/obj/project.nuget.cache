@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "q8Q3knE7mVjGz85Gem3QZxAKZPBgkIOQEKWtES1aFmdrBnu8524cALYeg3DreswD0rb3KqUPDgxrV0UmN6/HHA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Roxy\\Documents\\AMDARIS\\dev1\\publicapp\\WebApiSample\\WebApiSample\\WebApiSample.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Roxy\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Roxy\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Roxy\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Roxy\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Roxy\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Roxy\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -13,7 +13,7 @@ namespace Domain
 
         public string Name { get; set; }
 
-        public List<User> Users { get; private set; }
+        public List<User> Users { get; set; }
 
         public Role(string name) {
             Id = Guid.NewGuid();

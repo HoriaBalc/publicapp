@@ -9,77 +9,50 @@ using System.Reflection.Emit;
 using System.Reflection;
 using Microsoft.IdentityModel.Tokens;
 using System.Xml;
-
-
-
-
-//static IMediator Init() {
-
-//var diContainer = new ServiceCollection()
-//    .AddDbContext<AppDbContext>() 
-//    .AddMediatR(typeof(Assembly))
-//    .AddScoped<ISportRepository, InMemorySportRepository>()
-//    .BuildServiceProvider();
-
-//    return diContainer.GetRequiredService<IMediator>();
-//}
-
-
-//Init();
-//var productId = await mediator.Send(new CreateProductCommand { Name = "test", Price = 10 });
-//var diContainer = new ServiceCollection()
-//               .AddMediatR(typeof(ISportRepository))   
-//               .AddDbContext<AppDbContext>()
-//               .AddScoped<ISportRepository, InMemorySportRepository>()
-//               .BuildServiceProvider();
-
-//var mediator = diContainer.GetRequiredService<IMediator>();
-
-//var sportId = await mediator.Send(new CreateSportCommand
-//{
-//    dto = new SportDTO("run")
-//});
-
-//var sportId1 = await mediator.Send(new CreateSportCommand
-//{
-//    dto = new SportDTO("cycle")
-//}); 
-
-
-//Console.WriteLine(sportId);
-//Console.WriteLine(sportId1);
+using Domain;
+using Application.Sports.Commands.UpdateSport;
+using Application.Sports.Commands.DeleteSport;
+using Application.Sports.Queries.GetAllSports;
+using Application.Sports;
 
 var mediator = Init();
 
 Console.WriteLine("Hello!");
 
-//InMemorySportRepository i = new InMemorySportRepository();
 
-var addedSport = await CreateSport(mediator);
-Console.WriteLine(addedSport);
-          
-//static void DisplayItem<T>(T item)
-//{
-//    var serializedProduct = JsonConvert.SerializeObject(item, new JsonSerializerSettings
-//    {
-//        PreserveReferencesHandling = PreserveReferencesHandling.Objects,
-//        Formatting = Formatting.Indented,
-//    });
+//var addedSport = await CreateSport(mediator);
+//Console.WriteLine(addedSport);
 
-//    Console.WriteLine(serializedProduct);
-//    Console.WriteLine();
+//var getSport = await GetSport(mediator);
+//Console.WriteLine(getSport.Name);
 
-//}
+//var getSports = await GetSports(mediator);
+//getSports.ForEach(s => { Console.WriteLine(s.Name); });
 
- static IMediator Init()
+//var updatedSport = await UpdateSport(mediator);
+//Console.WriteLine(updatedSport.Name);
+
+//var deleteSport = await DeleteSport(mediator);
+//Console.WriteLine(deleteSport.Name);
+
+
+
+
+static IMediator Init()
 {
     var diContainer = new ServiceCollection()
         .AddDbContext<AppDbContext>()
-        .AddMediatR(typeof(Assembly))
+        .AddMediatR(typeof(Assembly)) 
         .AddMediatR(typeof(ISportRepository))
 
-        // .AddScoped<IUnitOfWork, UnitOfWork>()
-        .AddScoped<ISportRepository, InMemorySportRepository>()
+        .AddScoped<IUnitOfWork, UnitOfWork>()
+        .AddScoped<ISportRepository, SportRepository>()
+        .AddScoped<IRoleRepository, RoleRepository>()
+        .AddScoped<IActivityRepository, ActivityRepository>()
+        .AddScoped<IDetailActivityRepository, DetailActivityRepository>()
+        .AddScoped<IPaceActivityRepository, PaceActivityRepository>()
+        .AddScoped<IUserRepository, UserRepository>()
+
         //.AddScoped<ICategoryRepository, CategoryRepository>()
         .BuildServiceProvider();
 
@@ -95,7 +68,36 @@ static async Task<string> CreateSport(IMediator mediator)
     return await mediator.Send(addSportCommand);
 }
 
+static async Task<Sport> GetSport(IMediator mediator)
+{
+    var getSportCommand = new GetSportByNameQuery();
+    getSportCommand.Name = "cycle";
+    return await mediator.Send(getSportCommand);
+}
 
+static async Task<List<Sport>> GetSports(IMediator mediator)
+{
+    var getSportsCommand = new GetAllSportsQuery();
+    return await mediator.Send(getSportsCommand);
+}
+
+static async Task<Sport> UpdateSport(IMediator mediator)
+{
+    var updateSportCommand = new UpdateSportCommand();
+    Sport s = await GetSport(mediator);
+    SportDTO dto = new SportDTO(s.Name);
+    dto.Id = s.Id;
+    dto.Activities = s.Activities;
+    updateSportCommand.dto = dto ;
+    return await mediator.Send(updateSportCommand);
+}
+
+static async Task<Sport> DeleteSport(IMediator mediator)
+{
+    var deleteSportCommand = new DeleteSportCommand();
+    deleteSportCommand.Name = "cycle";
+    return await mediator.Send(deleteSportCommand);
+}
 
 
 

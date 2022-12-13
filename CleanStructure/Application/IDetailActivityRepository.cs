@@ -9,7 +9,10 @@ namespace Application
 {
     public interface IDetailActivityRepository
     {
-        DetailActivity GetDetailActivity(Guid id);
-        void CreateDetailActivity(DetailActivity detailActivity);
+        Task<DetailActivity> GetDetailActivity(Guid id);
+        Task<List<DetailActivity>> GetDetailActivities();
+        Task<Guid> CreateDetailActivity(DetailActivity detailActivity);
+        Task<DetailActivity> DeleteDetailActivity(DetailActivity detailActivity);
+        Task<DetailActivity> UpdateDetailActivity(DetailActivity detailActivity);
     }
 }

@@ -10,16 +10,19 @@ namespace Application
 {
     public class GetSportByNameQueryHandler : IRequestHandler<GetSportByNameQuery, Sport>
     {
-        private readonly ISportRepository _sportRepository;
 
-        public GetSportByNameQueryHandler(ISportRepository sportRepository)
+        private readonly IUnitOfWork _unitOfWork;
+
+        public GetSportByNameQueryHandler(IUnitOfWork unitOfWork)
         {
-            _sportRepository = sportRepository;
+            _unitOfWork = unitOfWork;
         }
+
 
         public async Task<Sport> Handle(GetSportByNameQuery request, CancellationToken cancellationToken)
         {
-            var sport = await _sportRepository.GetSport(request.Name);
+            var sport = await _unitOfWork.SportRepository.GetSport(request.Name);
+
             return sport;
 
         }

@@ -10,17 +10,18 @@ namespace Application.Sports.Commands.DeleteSport
 {
     public class DeleteSportHandler : IRequestHandler<DeleteSportCommand, Sport>
     {
-        private readonly ISportRepository _sportRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public DeleteSportHandler(ISportRepository sportRepository)
+        public DeleteSportHandler(IUnitOfWork unitOfWork)
         {
-            _sportRepository = sportRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<Sport> Handle(DeleteSportCommand request, CancellationToken cancellationToken)
         {
-            var sport = await _sportRepository.GetSport(request.Name);
-            await _sportRepository.DeleteSport(sport);
+            var sport = await _unitOfWork.SportRepository.GetSport(request.Name);
+            await _unitOfWork.SportRepository.DeleteSport(sport);
+            await _unitOfWork.Save();
             return sport;
         }
     }

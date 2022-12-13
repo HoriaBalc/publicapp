@@ -9,7 +9,11 @@ namespace Application
 {
     public interface IRoleRepository
     {
-        Role GetRole(string name);
-        void CreateRole(Role role);
+        Task<Role> GetRole(string name);
+        Task<string> CreateRole(Role role);
+        Task<Role> DeleteRole(Role role);
+        Task<List<Role>> GetRoles();
+        Task<Role> UpdateRole(Role role);
+
     }
 }

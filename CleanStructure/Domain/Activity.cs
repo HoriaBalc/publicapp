@@ -29,7 +29,7 @@ namespace Domain
         
         public virtual User User { get; set; }
         
-        public List<DetailActivity> Details { get; private set; }
+        public List<DetailActivity> Details { get; set; }
         public Activity()
         {
             Id = Guid.NewGuid();

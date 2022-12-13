@@ -10,11 +10,10 @@ namespace Application
 {
     public class CreateSportHandler : IRequestHandler<CreateSportCommand, string>
     {
-        private readonly ISportRepository _sportRepository;
-
-        public CreateSportHandler(ISportRepository sportRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public CreateSportHandler(IUnitOfWork unitOfWork)
         {
-            _sportRepository = sportRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<string> Handle(CreateSportCommand request, CancellationToken cancellationToken)
@@ -23,7 +22,8 @@ namespace Application
             var sport = new Sport(request.dto.Name);
             //var sportDto = new SportDTO(sport);
             //var s = new Sport(request.Name);
-            var sp=await _sportRepository.CreateSport(sport);
+            var sp=await _unitOfWork.SportRepository.CreateSport(sport);
+            await _unitOfWork.Save();
             return sp;
 
         }

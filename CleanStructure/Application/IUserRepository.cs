@@ -9,7 +9,12 @@ namespace Application
 {
     public interface IUserRepository
     {
-        User GetUser(string lastName, string firstName);
-        void CreateUser(User user);
+        Task<User> GetUser(string email);
+        Task<User> GetUserById(Guid id);
+        Task<List<User>> GetUsers();
+        Task<string> CreateUser(User user);
+        Task<User> DeleteUser(User user);
+        Task<User> UpdateUser(User user);
+
     }
 }

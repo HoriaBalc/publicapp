@@ -9,7 +9,10 @@ namespace Application
 {
     public interface IActivityRepository
     {
-        Activity GetActivity(Guid id);
-        void CreateActivity(Activity activity);
+        Task<Activity> GetActivity(Guid id);
+        Task<List<Activity>> GetActivities();
+        Task<Guid> CreateActivity(Activity activity);
+        Task<Activity> DeleteActivity(Activity activity);
+        Task<Activity> UpdateActivity(Activity activity);
     }
 }

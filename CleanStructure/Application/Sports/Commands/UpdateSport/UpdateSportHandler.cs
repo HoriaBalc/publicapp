@@ -11,17 +11,22 @@ namespace Application.Sports.Commands.UpdateSport
 {
     public class UpdateSportHandler : IRequestHandler<UpdateSportCommand, Sport>
     {
-        private readonly ISportRepository _sportRepository;
+       // private readonly ISportRepository _sportRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public UpdateSportHandler(ISportRepository sportRepository)
+        public UpdateSportHandler(IUnitOfWork unitOfWork)
         {
-            _sportRepository = sportRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<Sport> Handle(UpdateSportCommand request, CancellationToken cancellationToken)
         {
-            var sport = await _sportRepository.GetSport(request.Name);
-            await _sportRepository.UpdateSport(sport);
+            var sport = await _unitOfWork.SportRepository.GetSport(request.dto.Name);
+            sport.Id = request.dto.Id;
+            sport.Activities = request.dto.Activities;
+            await _unitOfWork.SportRepository.UpdateSport(sport);
+            await _unitOfWork.Save();
+
             return sport;
         }
     }

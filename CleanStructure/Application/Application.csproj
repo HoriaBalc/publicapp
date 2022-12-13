@@ -14,17 +14,4 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Activities\Commands\" />
-    <Folder Include="Activities\Queries\" />
-    <Folder Include="DetailsActivity\Commands\" />
-    <Folder Include="DetailsActivity\Queries\" />
-    <Folder Include="PaceActivities\Commands\" />
-    <Folder Include="PaceActivities\Queries\" />
-    <Folder Include="Roles\Commands\" />
-    <Folder Include="Roles\Queries\" />
-    <Folder Include="Users\Commands\" />
-    <Folder Include="Users\Queries\" />
-  </ItemGroup>
-
 </Project>
