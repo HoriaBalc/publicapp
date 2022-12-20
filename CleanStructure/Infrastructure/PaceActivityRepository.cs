@@ -14,6 +14,11 @@ namespace Infrastructure
     {
 
         private readonly AppDbContext _context;
+
+        public PaceActivityRepository(AppDbContext context)
+        {
+            _context = context;
+        }
         public async Task<PaceActivity> GetPaceActivity(Guid id)
         {
             var activity = await _context.PaceActivities.SingleOrDefaultAsync(s => s.Id == id);

@@ -22,11 +22,13 @@ namespace Application.Sports.Commands.UpdateSport
         public async Task<Sport> Handle(UpdateSportCommand request, CancellationToken cancellationToken)
         {
             var sport = await _unitOfWork.SportRepository.GetSport(request.dto.Name);
-            sport.Id = request.dto.Id;
-            sport.Activities = request.dto.Activities;
-            await _unitOfWork.SportRepository.UpdateSport(sport);
-            await _unitOfWork.Save();
-
+            //sport.Id = request.dto.Id;
+            if (sport != null)
+            {
+                 sport.Activities = request.dto.Activities;
+                await _unitOfWork.SportRepository.UpdateSport(sport);
+                await _unitOfWork.Save();
+            }
             return sport;
         }
     }

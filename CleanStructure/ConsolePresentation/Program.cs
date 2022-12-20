@@ -35,6 +35,65 @@ Console.WriteLine("Hello!");
 //var deleteSport = await DeleteSport(mediator);
 //Console.WriteLine(deleteSport.Name);
 
+var addedRole = await CreateSport(mediator);
+Console.WriteLine(addedRole);
+
+var getSport = await GetSport(mediator);
+Console.WriteLine(getSport.Name);
+
+var getSports = await GetSports(mediator);
+getSports.ForEach(s => { Console.WriteLine(s.Name); });
+
+var updatedSport = await UpdateSport(mediator);
+Console.WriteLine(updatedSport.Name);
+
+var deleteSport = await DeleteSport(mediator);
+Console.WriteLine(deleteSport.Name);
+
+//var addedSport = await CreateSport(mediator);
+//Console.WriteLine(addedSport);
+
+//var getSport = await GetSport(mediator);
+//Console.WriteLine(getSport.Name);
+
+//var getSports = await GetSports(mediator);
+//getSports.ForEach(s => { Console.WriteLine(s.Name); });
+
+//var updatedSport = await UpdateSport(mediator);
+//Console.WriteLine(updatedSport.Name);
+
+//var deleteSport = await DeleteSport(mediator);
+//Console.WriteLine(deleteSport.Name);
+
+//var addedSport = await CreateSport(mediator);
+//Console.WriteLine(addedSport);
+
+//var getSport = await GetSport(mediator);
+//Console.WriteLine(getSport.Name);
+
+//var getSports = await GetSports(mediator);
+//getSports.ForEach(s => { Console.WriteLine(s.Name); });
+
+//var updatedSport = await UpdateSport(mediator);
+//Console.WriteLine(updatedSport.Name);
+
+//var deleteSport = await DeleteSport(mediator);
+//Console.WriteLine(deleteSport.Name);
+
+//var addedSport = await CreateSport(mediator);
+//Console.WriteLine(addedSport);
+
+//var getSport = await GetSport(mediator);
+//Console.WriteLine(getSport.Name);
+
+//var getSports = await GetSports(mediator);
+//getSports.ForEach(s => { Console.WriteLine(s.Name); });
+
+//var updatedSport = await UpdateSport(mediator);
+//Console.WriteLine(updatedSport.Name);
+
+//var deleteSport = await DeleteSport(mediator);
+//Console.WriteLine(deleteSport.Name);
 
 
 
@@ -44,6 +103,12 @@ static IMediator Init()
         .AddDbContext<AppDbContext>()
         .AddMediatR(typeof(Assembly)) 
         .AddMediatR(typeof(ISportRepository))
+        .AddMediatR(typeof(IActivityRepository))
+        .AddMediatR(typeof(IPaceActivityRepository))
+        .AddMediatR(typeof(IDetailActivityRepository))
+        .AddMediatR(typeof(IUserRepository))
+        .AddMediatR(typeof(IRoleRepository))
+         .AddMediatR(typeof(IUnitOfWork))
 
         .AddScoped<IUnitOfWork, UnitOfWork>()
         .AddScoped<ISportRepository, SportRepository>()
@@ -52,8 +117,6 @@ static IMediator Init()
         .AddScoped<IDetailActivityRepository, DetailActivityRepository>()
         .AddScoped<IPaceActivityRepository, PaceActivityRepository>()
         .AddScoped<IUserRepository, UserRepository>()
-
-        //.AddScoped<ICategoryRepository, CategoryRepository>()
         .BuildServiceProvider();
 
     return diContainer.GetRequiredService<IMediator>();

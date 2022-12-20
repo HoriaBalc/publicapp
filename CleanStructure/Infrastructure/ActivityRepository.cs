@@ -17,6 +17,11 @@ namespace Infrastructure
       
 
         private readonly AppDbContext _context;
+
+        public ActivityRepository(AppDbContext context)
+        {
+            _context = context;
+        }
         public async Task<Activity> GetActivity(Guid id)
         {
             var activity = await _context.Activities.SingleOrDefaultAsync(s => s.Id == id);

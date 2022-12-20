@@ -13,6 +13,12 @@ namespace Infrastructure
     public class RoleRepository : IRoleRepository
     {
         private readonly AppDbContext _context;
+
+        public RoleRepository(AppDbContext context)
+        {
+            _context = context;
+        }
+
         public async Task<Role> GetRole(string name)
         {
             var role = await _context.Roles.SingleOrDefaultAsync(s => s.Name == name);

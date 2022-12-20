@@ -12,6 +12,5 @@ namespace Application
     public class CreateSportCommand : IRequest<string>
     {        
        public SportDTO dto  { get; set; }
-        //public List<SportDTO> Sports { get; set; } = new();
     }
 }
