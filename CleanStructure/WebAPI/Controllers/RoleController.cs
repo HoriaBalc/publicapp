@@ -9,6 +9,7 @@ using Application.Roles.Queries.GetAllRoles;
 using Application.Roles.Queries.GetRoleByName;
 using Application.Roles.Commands.UpdateRole;
 using Application.Roles.Commands.DeleteRole;
+using WebAPI.DTOs;
 
 namespace WebAPI.Controllers
 {
@@ -27,11 +28,11 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateRole([FromBody] string name)
+        public async Task<IActionResult> CreateRole([FromBody] NameDTO name)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            RoleDTO roleDTO = new RoleDTO(name);
+            RoleDTO roleDTO = new RoleDTO(name.Name);
             var command = new CreateRoleCommand { dto = roleDTO };
 
             var result = await _mediator.Send(command);

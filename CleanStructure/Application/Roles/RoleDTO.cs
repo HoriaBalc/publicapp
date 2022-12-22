@@ -13,12 +13,10 @@ namespace Application
         {
             Id = Guid.NewGuid();
             Name = name;
-            Users = new List<User>();
         }
         public Guid Id { get; set; }
 
         public string Name { get; set; } = null!;
 
-        public List<User> Users { get; set; } = new();
     }
 }

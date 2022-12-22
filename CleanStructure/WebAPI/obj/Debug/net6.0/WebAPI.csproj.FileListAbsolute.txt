@@ -83,3 +83,11 @@ C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CleanStructure\WebAPI\bin\Debug\n
 C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CleanStructure\WebAPI\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CleanStructure\WebAPI\bin\Debug\net6.0\Infrastructure.dll
 C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CleanStructure\WebAPI\bin\Debug\net6.0\Infrastructure.pdb
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CleanStructure\WebAPI\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CleanStructure\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CleanStructure\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CleanStructure\WebAPI\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CleanStructure\WebAPI\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CleanStructure\WebAPI\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CleanStructure\WebAPI\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\Roxy\Documents\AMDARIS\dev1\publicapp\CleanStructure\WebAPI\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

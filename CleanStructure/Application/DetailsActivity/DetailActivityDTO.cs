@@ -10,8 +10,8 @@ namespace Application.DetailsActivity
     public class DetailActivityDTO
     {
         public Guid Id { get; private set; }
-
-        public TimeSpan Duration { get; set; }
+        //seconds
+        public int Duration { get; set; }
 
         public double Distance { get; set; }
 
@@ -21,7 +21,6 @@ namespace Application.DetailsActivity
 
         public double Calories { get; set; }
 
-        public Activity Activity { get; set; }
 
 
         public DetailActivityDTO()
@@ -29,7 +28,7 @@ namespace Application.DetailsActivity
             Id = Guid.NewGuid();
         }
 
-        public DetailActivityDTO(TimeSpan duration, double distance)
+        public DetailActivityDTO(int duration, double distance)
         {
             Id = Guid.NewGuid();
             Duration = duration;
@@ -37,16 +36,7 @@ namespace Application.DetailsActivity
 
         }
 
-        public DetailActivityDTO(TimeSpan duration, double distance, Activity activity)
-        {
-            Id = Guid.NewGuid();
-            Duration = duration;
-            Distance = distance;
-            Activity = activity;
-
-        }
-
-        public DetailActivityDTO(TimeSpan duration, double distance, int elevationGain, int elevationLoss, double calories)
+        public DetailActivityDTO(int duration, double distance, int elevationGain, int elevationLoss, double calories)
         {
             Id = Guid.NewGuid();
             Duration = duration;

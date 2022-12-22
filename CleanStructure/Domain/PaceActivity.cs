@@ -15,12 +15,12 @@ namespace Domain
             Steps = 0;
         }
 
-        public PaceActivity(TimeSpan duration, DateTime startDate, double distance, Sport sport, User user) : base(duration, startDate, distance, sport, user)
+        public PaceActivity(int duration, DateTime startDate, double distance, Sport sport, User user) : base(duration, startDate, distance, sport, user)
         {
             Steps = 0;
         }
 
-        public PaceActivity(TimeSpan duration, DateTime startDate, double distance, int elevationGain, int elevationLoss, float calories, Sport sport, User user) : base( duration, startDate, distance, elevationGain, elevationLoss, calories, sport,user)
+        public PaceActivity(int duration, DateTime startDate, double distance, int elevationGain, int elevationLoss, float calories, Sport sport, User user) : base( duration, startDate, distance, elevationGain, elevationLoss, calories, sport,user)
         {
             Steps = 0;
         }

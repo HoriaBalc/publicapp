@@ -10,8 +10,8 @@ namespace Domain
     public class DetailActivity
     {
         public Guid Id { get; private set; }
-        
-        public TimeSpan Duration { get; set; }
+        //seconds
+        public int Duration { get; set; }
         
         public double Distance { get; set; }
         
@@ -29,7 +29,7 @@ namespace Domain
             Id = Guid.NewGuid();
         }
 
-        public DetailActivity(TimeSpan duration, double distance)
+        public DetailActivity(int duration, double distance)
         {
             Id = Guid.NewGuid();
             Duration = duration;
@@ -37,7 +37,7 @@ namespace Domain
             
         }
 
-        public DetailActivity(TimeSpan duration, double distance, Activity activity)
+        public DetailActivity(int duration, double distance, Activity activity)
         {
             Id = Guid.NewGuid();
             Duration = duration;
@@ -46,7 +46,7 @@ namespace Domain
 
         }
 
-        public DetailActivity(TimeSpan duration, double distance, int elevationGain, int elevationLoss, double calories)
+        public DetailActivity(int duration, double distance, int elevationGain, int elevationLoss, double calories)
         {
             Id = Guid.NewGuid();
             Duration = duration;

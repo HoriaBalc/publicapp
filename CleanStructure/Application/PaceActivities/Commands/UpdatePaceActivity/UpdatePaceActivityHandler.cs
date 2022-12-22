@@ -23,15 +23,12 @@ namespace Application.PaceActivities.Commands.UpdatePaceActivity
         {
             var activity = await _unitOfWork.PaceActivityRepository.GetPaceActivity(request.dto.Id);
             activity.Duration = request.dto.Duration;
-            activity.Sport = request.dto.Sport;
             activity.Distance = request.dto.Distance;
             activity.ElevationGain = request.dto.ElevationGain;
             activity.ElevationLoss = request.dto.ElevationLoss;
-            activity.User = request.dto.User;
             activity.InProgress = request.dto.InProgress;
             activity.StartDate = request.dto.StartDate;
             activity.Calories = request.dto.Calories;
-            activity.Details = request.dto.Details;
             activity.Steps = request.dto.Steps;
             await _unitOfWork.ActivityRepository.UpdateActivity(activity);
             await _unitOfWork.Save();

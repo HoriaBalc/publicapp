@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain;
-namespace Data
+namespace Infrastructure.Data
 {
 
     public class ActivityConfiguration : IEntityTypeConfiguration<Activity>

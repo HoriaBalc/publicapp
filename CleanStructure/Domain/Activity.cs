@@ -12,8 +12,8 @@ namespace Domain
         public Guid Id { get; private set; }   
 
         public DateTime StartDate { get; set; }
-        
-        public TimeSpan Duration { get; set; }
+        //seconds
+        public int Duration { get; set; }
         
         public double Distance { get; set; }
         
@@ -34,7 +34,7 @@ namespace Domain
         {
             Id = Guid.NewGuid();
         }
-        public Activity(TimeSpan duration, DateTime startDate, double distance, Sport sport, User user)
+        public Activity(int duration, DateTime startDate, double distance, Sport sport, User user)
         {
             Id = Guid.NewGuid();
             Duration = duration;
@@ -46,7 +46,7 @@ namespace Domain
             Details = new List<DetailActivity>();
         }
 
-        public Activity(TimeSpan duration, DateTime startDate, double distance, int elevationGain, int elevationLoss, double calories, Sport sport, User user):this(duration,startDate,distance,sport,user)
+        public Activity(int duration, DateTime startDate, double distance, int elevationGain, int elevationLoss, double calories, Sport sport, User user):this(duration,startDate,distance,sport,user)
         {
             ElevationGain = elevationGain;
             ElevationLoss = elevationLoss;

@@ -17,20 +17,20 @@ namespace Application.PaceActivities
             Steps = 0;
         }
 
-        public PaceActivityDTO(TimeSpan duration, DateTime startDate, double distance, Sport sport, User user) : base(duration, startDate, distance, sport, user)
+        public PaceActivityDTO(int duration, DateTime startDate, double distance) : base(duration, startDate, distance)
         {
             Steps = 0;
         }
 
-        public PaceActivityDTO(TimeSpan duration, DateTime startDate, double distance, int elevationGain, int elevationLoss, float calories, Sport sport, User user) : base(duration, startDate, distance, elevationGain, elevationLoss, calories, sport, user)
+        public PaceActivityDTO(int duration, DateTime startDate, double distance, int elevationGain, int elevationLoss, float calories) : base(duration, startDate, distance, elevationGain, elevationLoss, calories)
         {
             Steps = 0;
         }
 
         public void CountSteps()
         {
-            //provisionally solution
-            Steps = (int)((double)Distance / ((double)(User.Height * 1.0541 / 2)));
+            //to do
+           // Steps = (int)((double)Distance / ((double)(User.Height * 1.0541 / 2)));
         }
     }
 }

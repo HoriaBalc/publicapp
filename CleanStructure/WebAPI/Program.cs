@@ -1,5 +1,5 @@
 using Application;
-using Data;
+using Infrastructure.Data;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using MediatR;
@@ -33,12 +33,14 @@ using Application.PaceActivities.Commands.DeletePaceActivity;
 using Application.PaceActivities.Commands.UpdatePaceActivity;
 using Application.PaceActivities.Queries.GetPaceActivityById;
 using Application.PaceActivities.Queries.GetAllPaceActivities;
-
+using WebAPI.Profiles;
+using System.Text.Json;
+using WebAPI;
+using WebAPI.DTOs;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -57,49 +59,49 @@ builder.Services.AddDbContext<AppDbContext>();
 //builder.Services.AddMediatR(typeof(Assembly));
 
 builder.Services.AddMediatR(typeof(CreateRoleCommand));
-builder.Services.AddMediatR(typeof(DeleteRoleCommand));
-builder.Services.AddMediatR(typeof(UpdateRoleCommand));
-builder.Services.AddMediatR(typeof(GetRoleByNameQuery));
-builder.Services.AddMediatR(typeof(GetAllRolesQuery));
+//builder.Services.AddMediatR(typeof(DeleteRoleCommand));
+//builder.Services.AddMediatR(typeof(UpdateRoleCommand));
+//builder.Services.AddMediatR(typeof(GetRoleByNameQuery));
+//builder.Services.AddMediatR(typeof(GetAllRolesQuery));
 
-builder.Services.AddMediatR(typeof(CreateSportCommand));
-builder.Services.AddMediatR(typeof(DeleteSportCommand));
-builder.Services.AddMediatR(typeof(UpdateSportCommand));
-builder.Services.AddMediatR(typeof(GetSportByNameQuery));
-builder.Services.AddMediatR(typeof(GetAllSportsQuery));
+//builder.Services.AddMediatR(typeof(CreateSportCommand));
+//builder.Services.AddMediatR(typeof(DeleteSportCommand));
+//builder.Services.AddMediatR(typeof(UpdateSportCommand));
+//builder.Services.AddMediatR(typeof(GetSportByNameQuery));
+//builder.Services.AddMediatR(typeof(GetAllSportsQuery));
 
-builder.Services.AddMediatR(typeof(CreateUserCommand));
-builder.Services.AddMediatR(typeof(DeleteUserCommand));
-builder.Services.AddMediatR(typeof(UpdateUserCommand));
-builder.Services.AddMediatR(typeof(GetUserByEmailQuery));
-builder.Services.AddMediatR(typeof(GetAllUsersQuery));
+//builder.Services.AddMediatR(typeof(CreateUserCommand));
+//builder.Services.AddMediatR(typeof(DeleteUserCommand));
+//builder.Services.AddMediatR(typeof(UpdateUserCommand));
+//builder.Services.AddMediatR(typeof(GetUserByEmailQuery));
+//builder.Services.AddMediatR(typeof(GetAllUsersQuery));
 
-builder.Services.AddMediatR(typeof(CreateActivityCommand));
-builder.Services.AddMediatR(typeof(DeleteActivityCommand));
-builder.Services.AddMediatR(typeof(UpdateActivityCommand));
-builder.Services.AddMediatR(typeof(GetActivityByIdQuery));
-builder.Services.AddMediatR(typeof(GetAllActivitiesQuery));
+//builder.Services.AddMediatR(typeof(CreateActivityCommand));
+//builder.Services.AddMediatR(typeof(DeleteActivityCommand));
+//builder.Services.AddMediatR(typeof(UpdateActivityCommand));
+//builder.Services.AddMediatR(typeof(GetActivityByIdQuery));
+//builder.Services.AddMediatR(typeof(GetAllActivitiesQuery));
 
-builder.Services.AddMediatR(typeof(CreateDetailsActivityCommand));
-builder.Services.AddMediatR(typeof(DeleteDetailsActivityCommand));
-builder.Services.AddMediatR(typeof(UpdateDetailsActivityCommand));
-builder.Services.AddMediatR(typeof(GetDetailsActivityByIdQuery));
-builder.Services.AddMediatR(typeof(GetAllDetailsActivitiesQuery));
+//builder.Services.AddMediatR(typeof(CreateDetailsActivityCommand));
+//builder.Services.AddMediatR(typeof(DeleteDetailsActivityCommand));
+//builder.Services.AddMediatR(typeof(UpdateDetailsActivityCommand));
+//builder.Services.AddMediatR(typeof(GetDetailsActivityByIdQuery));
+//builder.Services.AddMediatR(typeof(GetAllDetailsActivitiesQuery));
 
-builder.Services.AddMediatR(typeof(CreatePaceActivityCommand));
-builder.Services.AddMediatR(typeof(DeletePaceActivityCommand));
-builder.Services.AddMediatR(typeof(UpdatePaceActivityCommand));
-builder.Services.AddMediatR(typeof(GetPaceActivityByIdQuery));
-builder.Services.AddMediatR(typeof(GetAllPaceActivitiesQuery));
+//builder.Services.AddMediatR(typeof(CreatePaceActivityCommand));
+//builder.Services.AddMediatR(typeof(DeletePaceActivityCommand));
+//builder.Services.AddMediatR(typeof(UpdatePaceActivityCommand));
+//builder.Services.AddMediatR(typeof(GetPaceActivityByIdQuery));
+//builder.Services.AddMediatR(typeof(GetAllPaceActivitiesQuery));
 
-builder.Services.AddMediatR(typeof(SportController));
-builder.Services.AddMediatR(typeof(RoleController));
-builder.Services.AddMediatR(typeof(UserController));
-builder.Services.AddMediatR(typeof(ActivityController));
-builder.Services.AddMediatR(typeof(PaceActivityController));
-builder.Services.AddMediatR(typeof(DetailActivityController));
+//builder.Services.AddMediatR(typeof(SportController));
+//builder.Services.AddMediatR(typeof(RoleController));
+//builder.Services.AddMediatR(typeof(UserController));
+//builder.Services.AddMediatR(typeof(ActivityController));
+//builder.Services.AddMediatR(typeof(PaceActivityController));
+//builder.Services.AddMediatR(typeof(DetailActivityController));
 
-//builder.Services.AddAutoMapper(typeof(Assembly));
+builder.Services.AddAutoMapper(typeof(RoleMappingProfiles));
 
 var app = builder.Build();
 
@@ -109,7 +111,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
     app.UseDeveloperExceptionPage();
-
 }
 
 app.UseHttpsRedirection();

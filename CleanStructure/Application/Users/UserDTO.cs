@@ -10,7 +10,6 @@ namespace Application.Users
 {
     public class UserDTO
     {
-        private string phone;
 
         public Guid Id { get; private set; }
 
@@ -28,29 +27,25 @@ namespace Application.Users
 
         public double Weight { get; set; }
 
-        public string Phone { get { return phone; } set { phone = this.FormatPhoneNumber(value); } }
+        public string Phone { get; set; }
 
-        public Role Role { get; set; }
-
-        public virtual List<Activity> Activities { get; private set; }
 
         public UserDTO()
         {
             Id = Guid.NewGuid();
         }
 
-        public UserDTO(string firstName, string lastName, string email, string password, Role role)
+        public UserDTO(string firstName, string lastName, string email, string password)
         {
             Id = Guid.NewGuid();
             LastName = lastName;
             FirstName = firstName;
             Email = email;
             Password = password;
-            Role = role;
-            Activities = new List<Activity>();
+           
         }
 
-        public UserDTO(string firstName, string lastName, string email, string password, string phone, Role role) : this(firstName, lastName, email, password, role)
+        public UserDTO(string firstName, string lastName, string email, string password, string phone) : this(firstName, lastName, email, password)
         {
             Phone = phone;
         }
@@ -65,24 +60,18 @@ namespace Application.Users
         //    Phone = phone;
         //}
 
-        public UserDTO(string firstName, string lastName, string email, string password, DateTime date, double height, double weight, Role role) : this(firstName, lastName, email, password, role)
+        public UserDTO(string firstName, string lastName, string email, string password, DateTime date, double height, double weight) : this(firstName, lastName, email, password)
         {
             BirthDay = date;
             Height = height;
             Weight = weight;
         }
 
-        public UserDTO(string firstName, string lastName, string email, string password, DateTime date, double height, double weight, string phone, Role role) : this(firstName, lastName, email, password, date, height, weight, role)
+        public UserDTO(string firstName, string lastName, string email, string password, DateTime date, double height, double weight, string phone) : this(firstName, lastName, email, password, date, height, weight)
         {
             Phone = phone;
         }
 
-        public string FormatPhoneNumber(string phone)
-        {
-            Regex regex = new Regex(@"[^\d]");
-            phone = regex.Replace(phone, "");
-            phone = Regex.Replace(phone, @"(\d{3})(\d{3})(\d{4})", "$1-$2-$3");
-            return phone;
-        }
+         
     }
 }

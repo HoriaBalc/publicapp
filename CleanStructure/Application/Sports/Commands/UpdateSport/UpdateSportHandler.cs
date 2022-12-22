@@ -25,7 +25,8 @@ namespace Application.Sports.Commands.UpdateSport
             //sport.Id = request.dto.Id;
             if (sport != null)
             {
-                 sport.Activities = request.dto.Activities;
+                // to do: add activity to sport 
+                // sport.Activities = request.dto.Activities;
                 await _unitOfWork.SportRepository.UpdateSport(sport);
                 await _unitOfWork.Save();
             }

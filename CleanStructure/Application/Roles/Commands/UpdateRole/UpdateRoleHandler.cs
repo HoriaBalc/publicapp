@@ -22,11 +22,9 @@ namespace Application.Roles.Commands.UpdateRole
         public async Task<Role> Handle(UpdateRoleCommand request, CancellationToken cancellationToken)
         {
             var role = await _unitOfWork.RoleRepository.GetRole(request.dto.Name);
-            role.Id = request.dto.Id;
-            role.Users = request.dto.Users;
+            //role.Users = request.dto.Users;
             await _unitOfWork.RoleRepository.UpdateRole(role);
             await _unitOfWork.Save();
-
             return role;
         }
     

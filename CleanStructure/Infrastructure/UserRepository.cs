@@ -1,7 +1,7 @@
 ﻿
 
 using Application;
-using Data;
+using Infrastructure.Data;
 using Domain;
 using Microsoft.EntityFrameworkCore;
 

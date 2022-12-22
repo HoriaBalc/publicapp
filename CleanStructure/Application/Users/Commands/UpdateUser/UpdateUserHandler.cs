@@ -28,8 +28,6 @@ namespace Application.Users.Commands.UpdateUser
             user.Phone = request.dto.Phone;
             user.Height = request.dto.Height;
             user.Weight = request.dto.Weight;
-            user.Role = request.dto.Role;
-            user.Activities = request.dto.Activities;
             await _unitOfWork.UserRepository.UpdateUser(user);
             await _unitOfWork.Save();
 

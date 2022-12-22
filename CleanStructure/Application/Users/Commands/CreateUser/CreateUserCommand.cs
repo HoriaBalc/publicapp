@@ -10,5 +10,6 @@ namespace Application.Users.Commands.CreateUser
     public class CreateUserCommand : IRequest<string>
     {
         public UserDTO dto { get; set; }
+        public RoleDTO roleDto { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
 using System.Text.RegularExpressions;
-using Data;
+using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Emit;
 using System.Reflection;
@@ -150,7 +150,7 @@ static async Task<Sport> UpdateSport(IMediator mediator)
     Sport s = await GetSport(mediator);
     SportDTO dto = new SportDTO(s.Name);
     dto.Id = s.Id;
-    dto.Activities = s.Activities;
+   // dto.Activities = s.Activities;
     updateSportCommand.dto = dto ;
     return await mediator.Send(updateSportCommand);
 }

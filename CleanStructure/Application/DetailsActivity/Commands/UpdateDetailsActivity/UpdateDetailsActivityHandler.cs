@@ -27,7 +27,6 @@ namespace Application.DetailsActivity.Commands.UpdateDetailsActivity
             activity.ElevationGain = request.dto.ElevationGain;
             activity.ElevationLoss = request.dto.ElevationLoss;
             activity.Calories = request.dto.Calories;
-            activity.Activity = request.dto.Activity;
             await _unitOfWork.DetailActivityRepository.UpdateDetailActivity(activity);
             await _unitOfWork.Save();
             return activity;

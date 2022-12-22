@@ -18,8 +18,8 @@ namespace Application.Users.Commands.CreateUser
 
         public async Task<string> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
-
-            var user = new User(request.dto.FirstName, request.dto.LastName,request.dto.Email, request.dto.Password, request.dto.Role);
+            var role = await _unitOfWork.RoleRepository.GetRole(request.roleDto.Name);
+            var user = new User(request.dto.FirstName, request.dto.LastName,request.dto.Email, request.dto.Password, request.dto.BirthDay, request.dto.Height, request.dto.Weight, request.dto.Phone, role);
             var u = await _unitOfWork.UserRepository.CreateUser(user);
             await _unitOfWork.Save();
             return u;

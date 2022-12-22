@@ -11,6 +11,9 @@ using Application.Users.Queries.GetUserByEmail;
 using Application.Users.Commands.UpdateUser;
 using Application.Users.Commands.DeleteUser;
 using Application.Users.Queries.GetAllUsers;
+using WebAPI.DTOs;
+using Application.Roles.Queries.GetRoleByName;
+using AutoMapper;
 
 namespace WebAPI.Controllers
 {
@@ -19,25 +22,33 @@ namespace WebAPI.Controllers
     public class UserController : ControllerBase
     {
         public readonly IMediator _mediator;
+        public readonly IMapper _mapper;
 
 
-        public UserController(IMediator mediator,
+        public UserController(IMediator mediator, IMapper mapper,
             IOptions<MySettingsSection> options)
         {
             _mediator = mediator;
-            //_mapper = mapper;
+            _mapper = mapper;
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateUser([FromBody] UserDTO userDTO)
+        public async Task<IActionResult> CreateUser([FromBody] UserDTOCreateUpdate userDTOCreateUpdate)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            //SportDTO sportDTO = new SportDTO(email);
-            var command = new CreateUserCommand { dto = userDTO };
+            var getRole = new GetRoleByNameQuery
+            {
+                Name = userDTOCreateUpdate.RoleName,
+            };
+            var role = await _mediator.Send(getRole);
+            var roleDTO = _mapper.Map<RoleDTO>(role);
+            Console.WriteLine(roleDTO.Name);
+            UserDTO userDTO = new(userDTOCreateUpdate.FirstName, userDTOCreateUpdate.LastName, userDTOCreateUpdate.Email, userDTOCreateUpdate.Password, userDTOCreateUpdate.BirthDay, userDTOCreateUpdate.Height, userDTOCreateUpdate.Weight, userDTOCreateUpdate.Phone);
+            var command = new CreateUserCommand { dto = userDTO, roleDto = roleDTO };
 
             var result = await _mediator.Send(command);
-            //var mappedResult = _mapper.Map<SportDTO>(result);
+            var mappedResult = _mapper.Map<SportDTO>(result);
 
             return CreatedAtAction(nameof(CreateUser), result);
         }
