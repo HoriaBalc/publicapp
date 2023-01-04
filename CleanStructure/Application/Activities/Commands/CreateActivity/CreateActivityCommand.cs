@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Application.DTOs;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,9 @@ namespace Application.Activities.Commands.CreateActivity
 {
     public class CreateActivityCommand : IRequest<Guid>
     {
-        public ActivityDTO dto { get; set; }
+        public ActivityDTOCreateUpdate dto { get; set; }
+       
+
     }
-   
+
 }

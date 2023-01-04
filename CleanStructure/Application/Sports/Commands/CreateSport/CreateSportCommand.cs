@@ -6,11 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain;
 using Application.Sports;
+using Application.DTOs;
 
 namespace Application
 {
     public class CreateSportCommand : IRequest<string>
     {        
-       public SportDTO dto  { get; set; }
+       public NameDTO dto  { get; set; }
     }
 }

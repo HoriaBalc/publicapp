@@ -20,8 +20,6 @@ namespace Application
         {
             
             var sport = new Sport(request.dto.Name);
-            //var sportDto = new SportDTO(sport);
-            //var s = new Sport(request.Name);
             var sp=await _unitOfWork.SportRepository.CreateSport(sport);
             await _unitOfWork.Save();
             return sp;

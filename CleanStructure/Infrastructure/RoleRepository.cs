@@ -31,6 +31,19 @@ namespace Infrastructure
             return role.Name;
         }
 
+        public async Task<string> AddUserToRole(string userEmail, string roleName)
+        {
+            Role role = await _context.Roles.SingleOrDefaultAsync(s => s.Name == roleName);
+            User user = await _context.Users.SingleOrDefaultAsync(s => s.Email == userEmail);
+            //role.Users.Add(user);
+            user.Role = role;
+            _context.Users.Update(user); 
+            _context.Roles.Update(role);
+            role.Users.ForEach(u => { Console.WriteLine(u.Id); });
+
+            return role.Name;
+        }
+
         public async Task<Role> DeleteRole(Role role)
         {
             _context.Roles.Remove(role);
@@ -46,7 +59,7 @@ namespace Infrastructure
 
         public async Task<List<Role>> GetRoles()
         {
-            var roleList = await _context.Roles.Take(100).ToListAsync();
+            var roleList = await _context.Roles.ToListAsync();
             return roleList;
         }
 

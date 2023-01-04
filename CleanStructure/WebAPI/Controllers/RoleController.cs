@@ -9,7 +9,8 @@ using Application.Roles.Queries.GetAllRoles;
 using Application.Roles.Queries.GetRoleByName;
 using Application.Roles.Commands.UpdateRole;
 using Application.Roles.Commands.DeleteRole;
-using WebAPI.DTOs;
+using Application.DTOs;
+using Application.Roles.Commands.AddUserToRole;
 
 namespace WebAPI.Controllers
 {
@@ -17,27 +18,22 @@ namespace WebAPI.Controllers
     [ApiController]
     public class RoleController : ControllerBase
     {
-        //public readonly IMapper _mapper;
-        public readonly IMediator _mediator;
+        private readonly IMediator _mediator;
 
         public RoleController(IMediator mediator,
             IOptions<MySettingsSection> options)
         {
             _mediator = mediator;
-            //_mapper = mapper;
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateRole([FromBody] NameDTO name)
+        public async Task<IActionResult> CreateRole([FromBody] NameDTO nameDTO)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            RoleDTO roleDTO = new RoleDTO(name.Name);
-            var command = new CreateRoleCommand { dto = roleDTO };
 
+            var command = new CreateRoleCommand { dto = nameDTO };
             var result = await _mediator.Send(command);
-            //var mappedResult = _mapper.Map<SportDTO>(result);
-
             return CreatedAtAction(nameof(CreateRole), result);
         }
 
@@ -45,7 +41,6 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> GetRoles()
         {
             var result = await _mediator.Send(new GetAllRolesQuery());
-            // var mappedResult = _mapper.Map<List<SportDTO>>(result);
             return Ok(result);
         }
 
@@ -59,7 +54,6 @@ namespace WebAPI.Controllers
             if (result == null)
                 return NotFound();
 
-            //var mappedResult = _mapper.Map<string>(result);
             return Ok(result);
         }
 
@@ -78,6 +72,25 @@ namespace WebAPI.Controllers
 
             return NoContent();
         }
+
+        [HttpPut]
+        [Route("addToRole")]
+        public async Task<IActionResult> AddUserToRole([FromBody] UserRoleDTO dto)
+        {
+            var command = new AddUserToRoleCommand
+            {
+                RoleName = dto.RoleName,
+                UserEmail = dto.UserEmail
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+
 
         [HttpDelete]
         [Route("{name}")]

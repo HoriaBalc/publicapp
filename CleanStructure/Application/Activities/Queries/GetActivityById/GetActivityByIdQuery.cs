@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Activities.Queries.GetActivityById
 {
-    public class GetActivityByIdQuery : IRequest<Activity>
+    public class GetActivityByIdQuery : IRequest<ActivityDTO>
     {
         public Guid Id { get; set; }
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Roles.Queries.GetRoleByName
 {
-    public class GetRoleByNameQuery : IRequest<Role>
+    public class GetRoleByNameQuery : IRequest<RoleDTO>
     {
         public string Name { get; set; } = null!;
 

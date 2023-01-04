@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Sports.Queries.GetAllSports
 {
-    public class GetAllSportsQuery : IRequest<List<Sport>>
+    public class GetAllSportsQuery : IRequest<List<SportDTO>>
     {
 
     }

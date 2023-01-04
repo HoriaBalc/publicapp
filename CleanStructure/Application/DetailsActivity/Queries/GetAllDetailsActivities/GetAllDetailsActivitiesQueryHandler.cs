@@ -1,4 +1,5 @@
 ﻿using Application.Activities.Queries.GetAllActivities;
+using AutoMapper;
 using Domain;
 using MediatR;
 using System;
@@ -9,21 +10,23 @@ using System.Threading.Tasks;
 
 namespace Application.DetailsActivity.Queries.GetAllDetailsActivities
 {
-    public class GetAllDetailsActivitiesQueryHandler : IRequestHandler<GetAllDetailsActivitiesQuery, List<DetailActivity>>
+    public class GetAllDetailsActivitiesQueryHandler : IRequestHandler<GetAllDetailsActivitiesQuery, List<DetailActivityDTO>>
     {
 
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public GetAllDetailsActivitiesQueryHandler(IUnitOfWork unitOfWork)
+        public GetAllDetailsActivitiesQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
 
-        public async Task<List<DetailActivity>> Handle(GetAllDetailsActivitiesQuery request, CancellationToken cancellationToken)
+        public async Task<List<DetailActivityDTO>> Handle(GetAllDetailsActivitiesQuery request, CancellationToken cancellationToken)
         {
             var activityList = await _unitOfWork.DetailActivityRepository.GetDetailActivities();
-            return activityList;
+            return _mapper.Map<List<DetailActivityDTO>>(activityList);
         }
     }
     

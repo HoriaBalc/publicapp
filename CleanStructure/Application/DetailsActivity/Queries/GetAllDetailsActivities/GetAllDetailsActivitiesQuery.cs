@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.DetailsActivity.Queries.GetAllDetailsActivities
 {
-    public class GetAllDetailsActivitiesQuery : IRequest<List<DetailActivity>>
+    public class GetAllDetailsActivitiesQuery : IRequest<List<DetailActivityDTO>>
     {
 
     }

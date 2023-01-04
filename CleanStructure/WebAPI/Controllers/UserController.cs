@@ -11,8 +11,10 @@ using Application.Users.Queries.GetUserByEmail;
 using Application.Users.Commands.UpdateUser;
 using Application.Users.Commands.DeleteUser;
 using Application.Users.Queries.GetAllUsers;
-using WebAPI.DTOs;
+using Application.DTOs;
 using Application.Roles.Queries.GetRoleByName;
+//using AutoMapper;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using AutoMapper;
 
 namespace WebAPI.Controllers
@@ -21,15 +23,13 @@ namespace WebAPI.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        public readonly IMediator _mediator;
-        public readonly IMapper _mapper;
+        private readonly IMediator _mediator;
 
 
-        public UserController(IMediator mediator, IMapper mapper,
+        public UserController(IMediator mediator, 
             IOptions<MySettingsSection> options)
         {
             _mediator = mediator;
-            _mapper = mapper;
         }
 
         [HttpPost]
@@ -37,19 +37,9 @@ namespace WebAPI.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var getRole = new GetRoleByNameQuery
-            {
-                Name = userDTOCreateUpdate.RoleName,
-            };
-            var role = await _mediator.Send(getRole);
-            var roleDTO = _mapper.Map<RoleDTO>(role);
-            Console.WriteLine(roleDTO.Name);
-            UserDTO userDTO = new(userDTOCreateUpdate.FirstName, userDTOCreateUpdate.LastName, userDTOCreateUpdate.Email, userDTOCreateUpdate.Password, userDTOCreateUpdate.BirthDay, userDTOCreateUpdate.Height, userDTOCreateUpdate.Weight, userDTOCreateUpdate.Phone);
-            var command = new CreateUserCommand { dto = userDTO, roleDto = roleDTO };
-
+            var command = new CreateUserCommand { dto = userDTOCreateUpdate };
             var result = await _mediator.Send(command);
-            var mappedResult = _mapper.Map<SportDTO>(result);
-
+            Console.WriteLine(result.ToString());
             return CreatedAtAction(nameof(CreateUser), result);
         }
 
@@ -57,7 +47,6 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> GetUsers()
         {
             var result = await _mediator.Send(new GetAllUsersQuery());
-            // var mappedResult = _mapper.Map<List<SportDTO>>(result);
             return Ok(result);
         }
 
@@ -71,7 +60,6 @@ namespace WebAPI.Controllers
             if (result == null)
                 return NotFound();
 
-            //var mappedResult = _mapper.Map<string>(result);
             return Ok(result);
         }
 

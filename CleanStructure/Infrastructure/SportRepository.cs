@@ -28,7 +28,7 @@ namespace Infrastructure
 
         public async Task<List<Sport>> GetSports()
         {
-            var sportList = await _context.Sports.Take(100).ToListAsync();
+            var sportList = await _context.Sports.ToListAsync();
             return sportList;
         }
 

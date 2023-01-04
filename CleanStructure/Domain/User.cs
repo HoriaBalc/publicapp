@@ -27,11 +27,7 @@ public class User
     
     public virtual List<Activity> Activities { get;  set; }
 
-    public User()
-    {
-        Id = Guid.NewGuid();
-    }
-
+   
     public User(string firstName, string lastName, string email, string password)
     {
         Id = Guid.NewGuid();
@@ -40,11 +36,6 @@ public class User
         Email = email;
         Password = password;
         Activities = new List<Activity>();
-    }
-    
-    public User( string firstName, string lastName, string email, string password, string phone):this(firstName,lastName,email,password)
-    {
-        Phone = phone;
     }
 
     //public User(string firstName, string lastName, string email, string role, string phone)
@@ -71,12 +62,12 @@ public class User
     }
 
 
-    public string FormatPhoneNumber(string phone)
-    {
-        Regex regex = new Regex(@"[^\d]");
-        phone = regex.Replace(phone, "");
-        phone = Regex.Replace(phone, @"(\d{3})(\d{3})(\d{4})", "$1-$2-$3");
-        return phone;
-    }
+    //public string FormatPhoneNumber(string phone)
+    //{
+    //    Regex regex = new Regex(@"[^\d]");
+    //    phone = regex.Replace(phone, "");
+    //    phone = Regex.Replace(phone, @"(\d{3})(\d{3})(\d{4})", "$1-$2-$3");
+    //    return phone;
+    //}
 
 }

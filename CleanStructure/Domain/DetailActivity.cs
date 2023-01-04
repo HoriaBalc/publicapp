@@ -9,6 +9,8 @@ namespace Domain
 {
     public class DetailActivity
     {
+        private Activity activity;
+
         public Guid Id { get; private set; }
         //seconds
         public int Duration { get; set; }
@@ -56,6 +58,9 @@ namespace Domain
             Calories = calories;          
         }
 
-
+        public DetailActivity(int duration, double distance, int elevationGain, int elevationLoss, double calories, Activity activity) : this(duration, distance, elevationGain, elevationLoss, calories)
+        {
+            this.activity = activity;
+        }
     }
 }

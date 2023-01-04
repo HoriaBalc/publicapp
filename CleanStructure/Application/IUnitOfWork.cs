@@ -16,5 +16,6 @@ namespace Application
         public IPaceActivityRepository PaceActivityRepository { get; }
 
         Task Save();
+        void SaveSync();
     }
 }

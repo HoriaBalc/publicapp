@@ -46,7 +46,7 @@ namespace Infrastructure
 
         public async Task<List<PaceActivity>> GetPaceActivities()
         {
-            var activityList = await _context.PaceActivities.Take(100).ToListAsync();
+            var activityList = await _context.PaceActivities.ToListAsync();
             return activityList;
         }
     }

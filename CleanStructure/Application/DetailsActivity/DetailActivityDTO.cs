@@ -21,29 +21,5 @@ namespace Application.DetailsActivity
 
         public double Calories { get; set; }
 
-
-
-        public DetailActivityDTO()
-        {
-            Id = Guid.NewGuid();
-        }
-
-        public DetailActivityDTO(int duration, double distance)
-        {
-            Id = Guid.NewGuid();
-            Duration = duration;
-            Distance = distance;
-
-        }
-
-        public DetailActivityDTO(int duration, double distance, int elevationGain, int elevationLoss, double calories)
-        {
-            Id = Guid.NewGuid();
-            Duration = duration;
-            Distance = distance;
-            ElevationGain = elevationGain;
-            ElevationLoss = elevationLoss;
-            Calories = calories;
-        }
     }
 }

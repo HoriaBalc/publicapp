@@ -1,4 +1,5 @@
 ﻿using Application.Sports.Queries.GetAllSports;
+using AutoMapper;
 using Domain;
 using MediatR;
 using System;
@@ -9,22 +10,24 @@ using System.Threading.Tasks;
 
 namespace Application.Users.Queries.GetAllUsers
 {
-    public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, List<User>>
+    public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, List<UserDTO>>
     {
 
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public GetAllUsersQueryHandler(IUnitOfWork unitOfWork)
+        public GetAllUsersQueryHandler(IUnitOfWork unitOfWork, IMapper mapper )
         {
+            _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
 
 
-        public async Task<List<User>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
+        public async Task<List<UserDTO>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
         {
             var userList = await _unitOfWork.UserRepository.GetUsers();
 
-            return userList;
+            return _mapper.Map<List<UserDTO>>(userList);
 
         }
     }

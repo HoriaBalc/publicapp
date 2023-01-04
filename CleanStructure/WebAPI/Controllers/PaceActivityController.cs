@@ -13,6 +13,8 @@ using Application.PaceActivities;
 using Application.PaceActivities.Queries.GetAllPaceActivities;
 using Application.PaceActivities.Queries.GetPaceActivityById;
 using Application.PaceActivities.Commands.DeletePaceActivity;
+using Application.DTOs;
+using AutoMapper;
 
 namespace WebAPI.Controllers
 {
@@ -20,26 +22,23 @@ namespace WebAPI.Controllers
     [ApiController]
     public class PaceActivityController : ControllerBase
     {
-        public readonly IMediator _mediator;
+        private readonly IMediator _mediator;
 
-        public PaceActivityController(IMediator mediator,
+        public PaceActivityController(IMediator mediator, 
             IOptions<MySettingsSection> options)
         {
             _mediator = mediator;
-            //_mapper = mapper;
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreatePaceActivity([FromBody] PaceActivityDTO paceActivityDTO)
+        public async Task<IActionResult> CreatePaceActivity([FromBody] PaceActivityDTOCreateUpdate paceActivityDTOCreateUpdate)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            //RoleDTO roleDTO = new RoleDTO(name);
-            var command = new CreatePaceActivityCommand { dto = paceActivityDTO };
+            var command = new CreatePaceActivityCommand { dto = paceActivityDTOCreateUpdate };
 
             var result = await _mediator.Send(command);
-            //var mappedResult = _mapper.Map<SportDTO>(result);
-
+            
             return CreatedAtAction(nameof(CreatePaceActivity), result);
         }
 
@@ -47,7 +46,6 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> GetPaceActivities()
         {
             var result = await _mediator.Send(new GetAllPaceActivitiesQuery());
-            // var mappedResult = _mapper.Map<List<SportDTO>>(result);
             return Ok(result);
         }
 
@@ -61,7 +59,6 @@ namespace WebAPI.Controllers
             if (result == null)
                 return NotFound();
 
-            //var mappedResult = _mapper.Map<string>(result);
             return Ok(result);
         }
 

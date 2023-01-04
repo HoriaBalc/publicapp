@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using AutoMapper;
+using Domain;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,21 +9,22 @@ using System.Threading.Tasks;
 
 namespace Application.Roles.Queries.GetRoleByName
 {
-    public class GetRoleByNameQueryHandler : IRequestHandler<GetRoleByNameQuery, Role>
+    public class GetRoleByNameQueryHandler : IRequestHandler<GetRoleByNameQuery, RoleDTO>
     {
 
         private readonly IUnitOfWork _unitOfWork;
-
-        public GetRoleByNameQueryHandler(IUnitOfWork unitOfWork)
+        private readonly IMapper _mapper;
+        public GetRoleByNameQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
 
-        public async Task<Role> Handle(GetRoleByNameQuery request, CancellationToken cancellationToken)
+        public async Task<RoleDTO> Handle(GetRoleByNameQuery request, CancellationToken cancellationToken)
         {
             var role = await _unitOfWork.RoleRepository.GetRole(request.Name);
-            return role;
+            return _mapper.Map<RoleDTO>(role);
         }
     }
   

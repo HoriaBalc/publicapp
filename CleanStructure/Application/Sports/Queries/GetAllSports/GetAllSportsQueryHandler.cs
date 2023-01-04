@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using AutoMapper;
+using Domain;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,22 +9,23 @@ using System.Threading.Tasks;
 
 namespace Application.Sports.Queries.GetAllSports
 {
-    public class GetAllSportsQueryHandler : IRequestHandler<GetAllSportsQuery, List<Sport>>
+    public class GetAllSportsQueryHandler : IRequestHandler<GetAllSportsQuery, List<SportDTO>>
     {
 
         private readonly IUnitOfWork _unitOfWork;
-
-        public GetAllSportsQueryHandler(IUnitOfWork unitOfWork)
+        private readonly IMapper _mapper;
+        public GetAllSportsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
 
-        public async Task<List<Sport>> Handle(GetAllSportsQuery request, CancellationToken cancellationToken)
+        public async Task<List<SportDTO>> Handle(GetAllSportsQuery request, CancellationToken cancellationToken)
         {
             var sportList = await _unitOfWork.SportRepository.GetSports();
 
-            return sportList;
+            return _mapper.Map<List<SportDTO>>(sportList);
 
         }
     }

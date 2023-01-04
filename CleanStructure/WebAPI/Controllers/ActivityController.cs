@@ -12,6 +12,8 @@ using Application.Activities.Queries.GetAllActivities;
 using Application.Activities.Queries.GetActivityById;
 using Application.Activities.Commands.UpdateActivity;
 using Application.Activities.Commands.DeleteActivity;
+using Application.DTOs;
+using AutoMapper;
 
 namespace WebAPI.Controllers
 {
@@ -19,25 +21,22 @@ namespace WebAPI.Controllers
     [ApiController]
     public class ActivityController : ControllerBase
     {
-        public readonly IMediator _mediator;
+        private readonly IMediator _mediator;
 
-        public ActivityController(IMediator mediator,
+        public ActivityController(IMediator mediator, 
             IOptions<MySettingsSection> options)
         {
             _mediator = mediator;
-            //_mapper = mapper;
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateActivity([FromBody] ActivityDTO activityDTO)
+        public async Task<IActionResult> CreateActivity([FromBody] ActivityDTOCreateUpdate activityDTOCtreateUpdate)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            //RoleDTO roleDTO = new RoleDTO(name);
-            var command = new CreateActivityCommand { dto = activityDTO };
+            var command = new CreateActivityCommand { dto = activityDTOCtreateUpdate };
 
             var result = await _mediator.Send(command);
-            //var mappedResult = _mapper.Map<SportDTO>(result);
 
             return CreatedAtAction(nameof(CreateActivity), result);
         }
@@ -46,7 +45,6 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> GetActivities()
         {
             var result = await _mediator.Send(new GetAllActivitiesQuery());
-            // var mappedResult = _mapper.Map<List<SportDTO>>(result);
             return Ok(result);
         }
 
@@ -60,7 +58,6 @@ namespace WebAPI.Controllers
             if (result == null)
                 return NotFound();
 
-            //var mappedResult = _mapper.Map<string>(result);
             return Ok(result);
         }
 

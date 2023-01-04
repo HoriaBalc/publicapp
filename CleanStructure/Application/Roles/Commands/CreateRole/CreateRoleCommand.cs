@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Application.DTOs;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,7 @@ namespace Application
 {
     public class CreateRoleCommand : IRequest<string>
     {
-        public RoleDTO dto { get; set; }
-        //public List<SportDTO> Sports { get; set; } = new();
+        public NameDTO dto { get; set; }
     }
     
 }

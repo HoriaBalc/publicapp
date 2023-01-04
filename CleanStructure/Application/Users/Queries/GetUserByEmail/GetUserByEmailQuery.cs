@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Users.Queries.GetUserByEmail
 {
-    public class GetUserByEmailQuery : IRequest<User>
+    public class GetUserByEmailQuery : IRequest<UserDTO>
     {
         public string Email { get; set; } = null!;
 

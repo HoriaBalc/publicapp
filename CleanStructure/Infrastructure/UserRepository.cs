@@ -27,6 +27,13 @@ namespace Infrastructure
             var user = await _context.Users.SingleOrDefaultAsync(s => s.Id == id);
             return user;
         }
+
+        public async Task<User> GetUserByEmail(string email)
+        {
+            var user = await _context.Users.SingleOrDefaultAsync(s => s.Email == email);
+            return user;
+        }
+
         public async Task<string> CreateUser(User user)
         {
             await _context.Users.AddAsync(user);
@@ -37,7 +44,7 @@ namespace Infrastructure
         {
             _context.Users.Remove(user);
             return user;
-
+                                                                                                        
         }
 
         public async Task<User> UpdateUser(User user)
@@ -48,7 +55,7 @@ namespace Infrastructure
 
         public async Task<List<User>> GetUsers()
         {
-            var userList = await _context.Users.Take(100).ToListAsync();
+            var userList = await _context.Users.Include(x=>x.Role).ToListAsync();
             return userList;
         }
 

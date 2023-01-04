@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ConsolePresentation.Migrations
+namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Migration1 : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -67,8 +67,8 @@ namespace ConsolePresentation.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Duration = table.Column<TimeSpan>(type: "time", nullable: false),
-                    Distance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Duration = table.Column<int>(type: "int", nullable: false),
+                    Distance = table.Column<double>(type: "float", nullable: false),
                     ElevationGain = table.Column<int>(type: "int", nullable: false),
                     ElevationLoss = table.Column<int>(type: "int", nullable: false),
                     Calories = table.Column<double>(type: "float", nullable: false),
@@ -98,8 +98,8 @@ namespace ConsolePresentation.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Duration = table.Column<TimeSpan>(type: "time", nullable: false),
-                    Distance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Duration = table.Column<int>(type: "int", nullable: false),
+                    Distance = table.Column<double>(type: "float", nullable: false),
                     ElevationGain = table.Column<int>(type: "int", nullable: false),
                     ElevationLoss = table.Column<int>(type: "int", nullable: false),
                     Calories = table.Column<double>(type: "float", nullable: false),

@@ -27,7 +27,6 @@ namespace Infrastructure
         public async Task<Guid> CreateDetailActivity(DetailActivity activity)
         {
             await _context.DetailActivities.AddAsync(activity);
-            //_context.SaveChanges(); 
             return activity.Id;
         }
 
@@ -46,7 +45,8 @@ namespace Infrastructure
 
         public async Task<List<DetailActivity>> GetDetailActivities()
         {
-            var activityList = await _context.DetailActivities.Take(100).ToListAsync();
+          //var activityList = await _context.DetailActivities.Include(x => x.Activity).ToListAsync();
+            var activityList = await _context.DetailActivities.ToListAsync();
             return activityList;
         }
     }

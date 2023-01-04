@@ -1,4 +1,5 @@
 ﻿using Application.Activities;
+using Application.DTOs;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Application.DetailsActivity.Commands.CreateDetailsActivity
 {
     public class CreateDetailsActivityCommand : IRequest<Guid>
     {
-        public DetailActivityDTO dto { get; set; }
+        public DetailsActivityDTOCreateUpdate dto { get; set; }
     }
     
 }

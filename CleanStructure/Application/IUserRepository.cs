@@ -11,6 +11,7 @@ namespace Application
     {
         Task<User> GetUser(string email);
         Task<User> GetUserById(Guid id);
+        Task<User> GetUserByEmail(string email);    
         Task<List<User>> GetUsers();
         Task<string> CreateUser(User user);
         Task<User> DeleteUser(User user);

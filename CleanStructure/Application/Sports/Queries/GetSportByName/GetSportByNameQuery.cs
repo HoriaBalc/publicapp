@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Domain;
 namespace Application
 {
-    public class GetSportByNameQuery : IRequest<Sport>
+    public class GetSportByNameQuery : IRequest<SportDTO>
     {
         public string Name { get; set; } = null!;
 

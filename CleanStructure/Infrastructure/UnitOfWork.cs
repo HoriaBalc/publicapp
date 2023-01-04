@@ -39,6 +39,11 @@ namespace Infrastructure
             await _dataContext.SaveChangesAsync();
         }
 
+        public void SaveSync()
+        {
+             _dataContext.SaveChanges();
+        }
+
         public void Dispose()
         {
             _dataContext.Dispose();

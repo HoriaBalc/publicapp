@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.PaceActivities.Queries.GetPaceActivityById
 {
-    public class GetPaceActivityByIdQuery : IRequest<PaceActivity>
+    public class GetPaceActivityByIdQuery : IRequest<PaceActivityDTO>
     {
         public Guid Id { get; set; }
 

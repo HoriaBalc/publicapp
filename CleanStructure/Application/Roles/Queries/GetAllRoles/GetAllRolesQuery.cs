@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Roles.Queries.GetAllRoles
 {
-    public class GetAllRolesQuery : IRequest<List<Role>>
+    public class GetAllRolesQuery : IRequest<List<RoleDTO>>
     {
 
     }

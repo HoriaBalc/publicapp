@@ -49,7 +49,7 @@ namespace Infrastructure
 
         public async Task<List<Activity>> GetActivities()
         {
-            var activityList = await _context.Activities.Take(100).ToListAsync();
+            var activityList = await _context.Activities.Include(x => x.Sport).ToListAsync();
             return activityList;
         }
 

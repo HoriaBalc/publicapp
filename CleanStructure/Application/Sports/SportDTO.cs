@@ -9,11 +9,6 @@ namespace Application
 {
     public class SportDTO
     {
-        public SportDTO(string name)
-        {
-            Id = Guid.NewGuid();
-            Name = name;
-        }
         public Guid Id { get; set; }
 
         public string Name { get; set; } = null!;

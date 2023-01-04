@@ -29,49 +29,6 @@ namespace Application.Users
 
         public string Phone { get; set; }
 
-
-        public UserDTO()
-        {
-            Id = Guid.NewGuid();
-        }
-
-        public UserDTO(string firstName, string lastName, string email, string password)
-        {
-            Id = Guid.NewGuid();
-            LastName = lastName;
-            FirstName = firstName;
-            Email = email;
-            Password = password;
-           
-        }
-
-        public UserDTO(string firstName, string lastName, string email, string password, string phone) : this(firstName, lastName, email, password)
-        {
-            Phone = phone;
-        }
-
-        //public User(string firstName, string lastName, string email, string role, string phone)
-        //{
-        //    Id = Guid.NewGuid();
-        //    LastName = lastName;
-        //    FirstName = firstName;
-        //    Email = email;
-        //    Role = new Role(role);
-        //    Phone = phone;
-        //}
-
-        public UserDTO(string firstName, string lastName, string email, string password, DateTime date, double height, double weight) : this(firstName, lastName, email, password)
-        {
-            BirthDay = date;
-            Height = height;
-            Weight = weight;
-        }
-
-        public UserDTO(string firstName, string lastName, string email, string password, DateTime date, double height, double weight, string phone) : this(firstName, lastName, email, password, date, height, weight)
-        {
-            Phone = phone;
-        }
-
          
     }
 }

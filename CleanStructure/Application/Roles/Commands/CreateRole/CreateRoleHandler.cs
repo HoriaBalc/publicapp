@@ -20,7 +20,6 @@ namespace Application
         {
 
             var role = new Role(request.dto.Name);
-            
             var sp = await _unitOfWork.RoleRepository.CreateRole(role);
             await _unitOfWork.Save();
             return sp;

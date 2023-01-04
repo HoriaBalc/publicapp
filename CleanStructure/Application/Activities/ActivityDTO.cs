@@ -26,41 +26,6 @@ namespace Application.Activities
 
         public bool InProgress { get; set; }
 
-        
-        public ActivityDTO()
-        {
-            Id = Guid.NewGuid();
-        }
-        public ActivityDTO(int duration, DateTime startDate, double distance)
-        {
-            Id = Guid.NewGuid();
-            Duration = duration;
-            StartDate = startDate;
-            Distance = distance;
-            InProgress = true;
-        }
-
-        public ActivityDTO(int duration, DateTime startDate, double distance, int elevationGain, int elevationLoss, double calories) : this(duration, startDate, distance)
-        {
-            ElevationGain = elevationGain;
-            ElevationLoss = elevationLoss;
-            Calories = calories;
-
-        }
-
-        //public void AddDetails()
-        //{
-        //    if (Details.Count < (int)Distance / 1)
-        //    {
-        //        if (Details.Count == 0)
-        //        {
-        //            Details.Add(new DetailActivity(Duration, Distance, ElevationGain, ElevationLoss, Calories));
-        //        }
-        //        else
-        //        {
-        //            Details.Add(new DetailActivity(Duration - Details[Details.Count - 1].Duration, Distance - Details[Details.Count - 1].Distance, ElevationGain - Details[Details.Count - 1].ElevationGain, ElevationLoss - Details[Details.Count - 1].ElevationLoss, Calories - Details[Details.Count - 1].Calories));
-        //        }
-        //    }
-        //}
+       
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Application.Sports.Commands.UpdateSport;
+using AutoMapper;
 using Domain;
 using MediatR;
 using System;
@@ -13,9 +14,11 @@ namespace Application.Users.Commands.UpdateUser
     {
         // private readonly ISportRepository _sportRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public UpdateUserHandler(IUnitOfWork unitOfWork)
+        public UpdateUserHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
+            _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
 
@@ -28,6 +31,7 @@ namespace Application.Users.Commands.UpdateUser
             user.Phone = request.dto.Phone;
             user.Height = request.dto.Height;
             user.Weight = request.dto.Weight;
+            //user.Role = request.dto.Role;
             await _unitOfWork.UserRepository.UpdateUser(user);
             await _unitOfWork.Save();
 

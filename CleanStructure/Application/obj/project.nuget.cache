@@ -1,15 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "kes/0eEigVa0HDbIvv74SYbg0JCEukZDenpyTQeI7G6pzBbYXr9O5fi/0O3E5Q9t4OwrpARJqwwn8GTtE0uxkw==",
+  "dgSpecHash": "qzAuhhcpXc6v2hRZYSpy++/ljab7Z5FzRr+Ln4tvjEYrMedMwsMk/sirpYljqhLp7X9CH87fstFz/+W9EnP6RA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Roxy\\Documents\\AMDARIS\\dev1\\publicapp\\CleanStructure\\Application\\Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Roxy\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Roxy\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Roxy\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Roxy\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
     "C:\\Users\\Roxy\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\Roxy\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\Roxy\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Roxy\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Roxy\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
     "C:\\Users\\Roxy\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\Roxy\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",

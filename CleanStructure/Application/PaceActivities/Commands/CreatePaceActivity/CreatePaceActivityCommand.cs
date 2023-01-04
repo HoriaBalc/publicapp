@@ -1,4 +1,5 @@
 ﻿using Application.Activities;
+using Application.DTOs;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,8 @@ namespace Application.PaceActivities.Commands.CreatePaceActivity
 {
     public class CreatePaceActivityCommand : IRequest<Guid>
     {
-        public PaceActivityDTO dto { get; set; }
+        public PaceActivityDTOCreateUpdate dto { get; set; }
+      
     }
     
 }

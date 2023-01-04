@@ -6,6 +6,7 @@ using Application;
 using Application.Sports.Queries.GetAllSports;
 using Application.Sports.Commands.UpdateSport;
 using Application.Sports.Commands.DeleteSport;
+using Application.DTOs;
 
 namespace WebAPI.Controllers
 {
@@ -13,27 +14,23 @@ namespace WebAPI.Controllers
     [ApiController]
     public class SportController : ControllerBase
     {
-        //public readonly IMapper _mapper;
-        public readonly IMediator _mediator;
+        private readonly IMediator _mediator;
 
 
         public SportController( IMediator mediator,
             IOptions<MySettingsSection> options)
         {
             _mediator = mediator;
-            //_mapper = mapper;
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateSport([FromBody] string name)
+        public async Task<IActionResult> CreateSport([FromBody] NameDTO nameDTO)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            SportDTO sportDTO = new SportDTO(name);
-            var command = new CreateSportCommand { dto = sportDTO };
+            var command = new CreateSportCommand { dto = nameDTO };
 
         var result = await _mediator.Send(command);
-        //var mappedResult = _mapper.Map<SportDTO>(result);
 
             return CreatedAtAction(nameof(CreateSport), result);
         }
@@ -42,7 +39,6 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> GetSports()
         {
             var result = await _mediator.Send(new GetAllSportsQuery());
-           // var mappedResult = _mapper.Map<List<SportDTO>>(result);
             return Ok(result);
         }
 
@@ -56,7 +52,6 @@ namespace WebAPI.Controllers
             if (result == null)
                 return NotFound();
 
-            //var mappedResult = _mapper.Map<string>(result);
             return Ok(result);
         }
 

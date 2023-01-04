@@ -19,11 +19,13 @@ namespace Application.PaceActivities.Commands.CreatePaceActivity
 
         public async Task<Guid> Handle(CreatePaceActivityCommand request, CancellationToken cancellationToken)
         {
-
-            var activity = new PaceActivity();
-            var id = await _unitOfWork.PaceActivityRepository.CreatePaceActivity(activity);
+            Sport sport = await _unitOfWork.SportRepository.GetSport(request.dto.SportName);
+            User user = await _unitOfWork.UserRepository.GetUserByEmail(request.dto.UserEmail);
+            var activity = new PaceActivity(request.dto.Duration, request.dto.StartDate, request.dto.Distance, request.dto.ElevationGain, request.dto.ElevationLoss, request.dto.Calories, sport, user);
+            var id = await _unitOfWork.ActivityRepository.CreateActivity(activity);
             await _unitOfWork.Save();
             return id;
+           
 
         }
     }
