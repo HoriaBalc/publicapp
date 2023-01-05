@@ -8,7 +8,7 @@ namespace WebAPI.Profiles
     {
         public RoleMappingProfiles() {
            CreateMap<Role, RoleDTO>();
-           //CreateMap<RoleDTO, Role>();
+           CreateMap<RoleDTO, Role>();
         }
     }
 }

@@ -12,7 +12,9 @@ namespace WebAPI.Profiles
         {
             CreateMap<PaceActivityDTOCreateUpdate, PaceActivityDTO>();
             CreateMap<PaceActivity, PaceActivityDTO>();
+            CreateMap<PaceActivityDTO, PaceActivity>();
+
         }
-   
+
     }
 }

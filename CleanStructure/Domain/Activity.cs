@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using AutoMapper;
 namespace Domain
 {
     public class Activity
@@ -30,7 +30,12 @@ namespace Domain
         public virtual User User { get; set; }
         
         public List<DetailActivity> Details { get; set; }
-       
+
+        
+        public Activity()
+        {
+
+        }
         public Activity(int duration, DateTime startDate, double distance, Sport sport, User user)
         {
             Id = Guid.NewGuid();

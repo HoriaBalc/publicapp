@@ -12,6 +12,8 @@ namespace WebAPI.Profiles
         {
             CreateMap<ActivityDTOCreateUpdate, ActivityDTO>();
             CreateMap<Activity, ActivityDTO>();
+            CreateMap<ActivityDTO, Activity>();
+
         }
     }
     

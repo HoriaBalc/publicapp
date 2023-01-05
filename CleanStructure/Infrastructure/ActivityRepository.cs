@@ -4,18 +4,14 @@ using Domain;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Activity = Domain.Activity;
 
 namespace Infrastructure
 {
     public class ActivityRepository : IActivityRepository
     {
-      
-
         private readonly AppDbContext _context;
 
         public ActivityRepository(AppDbContext context)
@@ -24,7 +20,7 @@ namespace Infrastructure
         }
         public async Task<Activity> GetActivity(Guid id)
         {
-            var activity = await _context.Activities.SingleOrDefaultAsync(s => s.Id == id);
+            var activity = await _context.Activities.Include(x => x.Sport).Include(x => x.User).SingleOrDefaultAsync(s => s.Id == id);
             return activity;
         }
         public async Task<Guid> CreateActivity(Activity activity)
@@ -49,7 +45,9 @@ namespace Infrastructure
 
         public async Task<List<Activity>> GetActivities()
         {
-            var activityList = await _context.Activities.Include(x => x.Sport).ToListAsync();
+            //var activityList = await _context.Activities.Include(x => x.Sport).ToListAsync();
+            var activityList = await _context.Activities.Include(x=> x.Sport).Include(x=>x.User).ToListAsync();
+
             return activityList;
         }
 

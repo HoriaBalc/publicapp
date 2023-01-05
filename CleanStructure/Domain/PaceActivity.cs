@@ -10,8 +10,11 @@ namespace Domain
     {       
         public int Steps { get; set; }
 
-       
 
+        public PaceActivity()
+        {
+
+        }
         public PaceActivity(int duration, DateTime startDate, double distance, Sport sport, User user) : base(duration, startDate, distance, sport, user)
         {
             Steps = 0;

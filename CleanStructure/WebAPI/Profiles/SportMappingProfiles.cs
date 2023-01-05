@@ -9,6 +9,7 @@ namespace WebAPI.Profiles
         public SportMappingProfiles()
         {
             CreateMap<Sport, SportDTO>();
+            CreateMap<SportDTO, Sport>();
 
         }
     }

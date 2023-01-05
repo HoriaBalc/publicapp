@@ -55,7 +55,7 @@ namespace Infrastructure
 
         public async Task<List<User>> GetUsers()
         {
-            var userList = await _context.Users.Include(x=>x.Role).ToListAsync();
+            var userList = await _context.Users.ToListAsync();
             return userList;
         }
 

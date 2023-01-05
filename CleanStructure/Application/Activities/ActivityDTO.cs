@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Activities
 {
+
     public class ActivityDTO
     {
         public Guid Id { get; private set; }

@@ -20,9 +20,7 @@ namespace Application.DetailsActivity.Commands.CreateDetailsActivity
         public async Task<Guid> Handle(CreateDetailsActivityCommand request, CancellationToken cancellationToken)
         {
             Activity activity = await _unitOfWork.ActivityRepository.GetActivity(request.dto.ActivityId);
-            Console.WriteLine(activity.Duration);
             DetailActivity detailActivity = new DetailActivity(request.dto.Duration, request.dto.Distance, request.dto.ElevationGain, request.dto.ElevationLoss, request.dto.Calories, activity);
-            //activity.Details.Add(detailActivity);
             var id = await _unitOfWork.DetailActivityRepository.CreateDetailActivity(detailActivity);
             await _unitOfWork.Save();
             return id;
