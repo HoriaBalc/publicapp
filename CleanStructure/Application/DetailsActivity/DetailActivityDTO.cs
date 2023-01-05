@@ -9,7 +9,7 @@ namespace Application.DetailsActivity
 {
     public class DetailActivityDTO
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
         //seconds
         public int Duration { get; set; }
 

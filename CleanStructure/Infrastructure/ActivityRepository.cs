@@ -51,6 +51,12 @@ namespace Infrastructure
             return activityList;
         }
 
+        public async Task<List<Activity>> GetActivitiesByUser()
+        {
+            //var activityList = await _context.Activities.Include(x => x.Sport).ToListAsync();
+            var activityList = await _context.Activities.Include(x => x.Sport).Include(x => x.User).ToListAsync();
 
+            return activityList;
+        }
     }
 }

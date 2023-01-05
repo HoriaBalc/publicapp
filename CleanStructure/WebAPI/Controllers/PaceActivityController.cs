@@ -15,6 +15,7 @@ using Application.PaceActivities.Queries.GetPaceActivityById;
 using Application.PaceActivities.Commands.DeletePaceActivity;
 using Application.DTOs;
 using AutoMapper;
+using Application.PaceActivities.Commands.UpdatePaceActivity;
 
 namespace WebAPI.Controllers
 {
@@ -63,9 +64,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdatePaceActivity([FromBody] ActivityDTO activityDTO)
+        public async Task<IActionResult> UpdatePaceActivity([FromBody] PaceActivityDTO activityDTO)
         {
-            var command = new UpdateActivityCommand
+            var command = new UpdatePaceActivityCommand
             {
                 dto = activityDTO,
             };

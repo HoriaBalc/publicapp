@@ -10,7 +10,7 @@ namespace Application.Activities
 
     public class ActivityDTO
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         public DateTime StartDate { get; set; }
 

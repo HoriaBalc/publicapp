@@ -16,6 +16,7 @@ using Application.Roles.Queries.GetRoleByName;
 //using AutoMapper;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using AutoMapper;
+using Application.Users.Queries.GetAllActivitiesFromUser;
 
 namespace WebAPI.Controllers
 {
@@ -47,6 +48,19 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> GetUsers()
         {
             var result = await _mediator.Send(new GetAllUsersQuery());
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("GetActivities/{email}")]
+        public async Task<IActionResult> GetActivitiesOfUser(string email)
+        {
+            var query = new GetAllActivitiesFromUserQuery { Email = email };
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
             return Ok(result);
         }
 

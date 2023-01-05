@@ -36,6 +36,18 @@ namespace Domain
         {
 
         }
+
+        public Activity(int duration, DateTime startDate, double distance, int elevationGain, int elevationLoss, double calories)
+        {
+            Id = Guid.NewGuid();
+            Duration = duration;
+            StartDate = startDate;
+            Distance = distance;
+            InProgress = true;
+            ElevationGain = elevationGain;
+            ElevationLoss = elevationLoss;
+            Calories = calories;
+        }
         public Activity(int duration, DateTime startDate, double distance, Sport sport, User user)
         {
             Id = Guid.NewGuid();
