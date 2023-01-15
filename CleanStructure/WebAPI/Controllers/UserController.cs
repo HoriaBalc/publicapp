@@ -52,7 +52,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("GetActivities/{email}")]
+        [Route("activities/{email}")]
         public async Task<IActionResult> GetActivitiesOfUser(string email)
         {
             var query = new GetAllActivitiesFromUserQuery { Email = email };
@@ -65,7 +65,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("{email}")]
+        [Route("GetUser/{email}")]
         public async Task<IActionResult> GetUserByEmail(string email)
         {
             var query = new GetUserByEmailQuery { Email = email };

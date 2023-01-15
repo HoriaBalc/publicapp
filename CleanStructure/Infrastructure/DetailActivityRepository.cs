@@ -1,4 +1,4 @@
-﻿using Application;
+﻿    using Application;
 using Infrastructure.Data;
 using Domain;
 using Microsoft.EntityFrameworkCore;
@@ -46,7 +46,7 @@ namespace Infrastructure
         public async Task<List<DetailActivity>> GetDetailActivities()
         {
           //var activityList = await _context.DetailActivities.Include(x => x.Activity).ToListAsync();
-            var activityList = await _context.DetailActivities.ToListAsync();
+            var activityList = await _context.DetailActivities.Include(x => x.Activity).ToListAsync();
             return activityList;
         }
     }

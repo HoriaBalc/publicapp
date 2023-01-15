@@ -31,9 +31,8 @@ namespace Application.Users.Queries.GetAllActivitiesFromUser
             {
                 if (a.User.Email == request.Email)
                     activitiesOfUser.Add(_mapper.Map<ActivityDTO>(a));
-                Console.WriteLine("asdas "+a.Id);
             });
-            return _mapper.Map<List<ActivityDTO>>(activitiesOfUser);
+            return activitiesOfUser;
 
         }
     }

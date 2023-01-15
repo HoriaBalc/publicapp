@@ -14,6 +14,8 @@ using Application.Activities.Commands.UpdateActivity;
 using Application.Activities.Commands.DeleteActivity;
 using Application.DTOs;
 using AutoMapper;
+using Application.Users.Queries.GetAllActivitiesFromUser;
+using Application.Activities.Queries.GetAllDetailActivitiesFromActivity;
 
 namespace WebAPI.Controllers
 {
@@ -45,6 +47,19 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> GetActivities()
         {
             var result = await _mediator.Send(new GetAllActivitiesQuery());
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("GetDetailActivities/{id}")]
+        public async Task<IActionResult> GetDetailActivitiesOfActivity(Guid id)
+        {
+            var query = new GetAllDetailsActivitiesFromActivityQuery { Id = id };
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
             return Ok(result);
         }
 

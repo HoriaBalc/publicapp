@@ -7,6 +7,8 @@ using Application.Sports.Queries.GetAllSports;
 using Application.Sports.Commands.UpdateSport;
 using Application.Sports.Commands.DeleteSport;
 using Application.DTOs;
+using Application.Users.Queries.GetAllActivitiesFromUser;
+using Application.Sports.Queries.GetAllActivitiesFromSport;
 
 namespace WebAPI.Controllers
 {
@@ -39,6 +41,19 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> GetSports()
         {
             var result = await _mediator.Send(new GetAllSportsQuery());
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("GetActivities/{name}")]
+        public async Task<IActionResult> GetActivitiesOfUser(string name)
+        {
+            var query = new GetAllActivitiesFromSportQuery { Name = name };
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
             return Ok(result);
         }
 
